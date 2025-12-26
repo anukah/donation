@@ -138,7 +138,7 @@ const recoveryData = [
 // 2. LOGIC SECTION
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-    // A. Mobile Menu Logic
+    
     const navToggle = document.getElementById("navToggle");
     const navMenu = document.getElementById("navMenu");
     
@@ -148,24 +148,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // B. Rendering Logic
+    
     const container = document.getElementById("project-container");
 
-    // Sorting Helper
+    
     const damageOrder = { 'Full': 1, 'Partial': 2, 'Minimal': 3 };
 
     recoveryData.forEach(dept => {
-        // Sort projects by damage level
+        
         dept.projects.sort((a, b) => {
             return (damageOrder[a.damage] || 99) - (damageOrder[b.damage] || 99);
         });
 
-        // 1. Create Section Container
+        
         const section = document.createElement("section");
         section.id = dept.id;
         section.className = "mb-10 scroll-mt-24"; 
 
-        // 2. Create Header
+        
         const header = document.createElement("div");
         header.className = "relative z-30 bg-white rounded-lg shadow-sm border border-gray-200 p-4 md:p-6 mb-4 flex items-center justify-between cursor-pointer group select-none hover:border-blue-200 transition-colors duration-200";
         header.innerHTML = `
@@ -181,28 +181,28 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         section.appendChild(header);
 
-        // 3. Content Wrapper
+        
         const contentWrapper = document.createElement("div");
         contentWrapper.className = "transition-[max-height,opacity] duration-500 ease-in-out";
         contentWrapper.style.maxHeight = "none"; 
         contentWrapper.style.opacity = "1";
-        // Default to visible so open cards don't get clipped
+        
         contentWrapper.style.overflow = "visible"; 
 
-        // 4. Grid Container
+        
         const grid = document.createElement("div");
         grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-8 pt-4";
 
         dept.projects.forEach(proj => {
-            // "Ghost" container for grid space
+            
             const ghost = document.createElement('div');
             ghost.className = "relative h-64 w-full group"; 
 
-            // Inner Absolute Card
+            
             const badgeClasses = getBadgeColorClasses(proj.damage);
             const { totalCostDisplay, breakdownHtml, hasMultiple } = parseCostLogic(proj.cost);
             
-            // Z-Index Logic: Base is z-10, Hover is z-50 to float above everything
+            
             ghost.innerHTML = `
                 <div class="absolute top-0 left-0 w-full min-h-full bg-white rounded-xl shadow-sm border border-gray-200 p-4 flex flex-col transition-all duration-200 ease-out z-10 group-hover:z-50 group-hover:h-auto group-hover:shadow-2xl group-hover:border-blue-300 group-hover:-translate-y-1">
                     
@@ -229,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p class="text-xs text-gray-800 font-medium leading-tight">${proj.action}</p>
                         </div>
                         
+                        
                         <div class="flex flex-col mt-2">
                             <div class="flex justify-between items-end">
                                 <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Est. Cost</span>
@@ -236,6 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     ${totalCostDisplay}
                                 </span>
                             </div>
+                            
                             
                             ${hasMultiple ? `
                                 <div class="hidden group-hover:block mt-2 text-xs font-medium text-gray-700 bg-blue-50 p-2 rounded border border-blue-100 w-full">
@@ -256,34 +258,34 @@ document.addEventListener("DOMContentLoaded", () => {
         section.appendChild(contentWrapper);
         container.appendChild(section);
 
-        // 5. Click Handler
+        
         let isOpen = true;
         header.addEventListener("click", () => {
             const icon = header.querySelector(".fa-chevron-up");
             if (isOpen) {
-                // CLOSING:
-                // 1. Force overflow hidden immediately so cards don't spill during transition
+                
+                
                 contentWrapper.style.overflow = "hidden";
-                // 2. Set explicit height for transition to work
+                
                 contentWrapper.style.maxHeight = contentWrapper.scrollHeight + "px";
-                // 3. Force reflow
+                
                 contentWrapper.offsetHeight; 
-                // 4. Collapse to 0
+                
                 contentWrapper.style.maxHeight = "0px";
                 contentWrapper.style.opacity = "0";
                 icon.style.transform = "rotate(180deg)";
             } else {
-                // OPENING:
-                // 1. Ensure overflow hidden during transition
+                
+                
                 contentWrapper.style.overflow = "hidden";
-                // 2. Set max height to content height
+                
                 contentWrapper.style.maxHeight = contentWrapper.scrollHeight + "px";
                 contentWrapper.style.opacity = "1";
                 icon.style.transform = "rotate(0deg)";
                 
-                // 3. After transition ends, set overflow to visible so cards can pop out
+                
                 setTimeout(() => { 
-                    if (!isOpen) { // Check if it wasn't closed quickly during animation
+                    if (!isOpen) { 
                         contentWrapper.style.maxHeight = "none"; 
                         contentWrapper.style.overflow = "visible";
                     }
@@ -294,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Helper: Parse Cost Logic
+
 function parseCostLogic(costStr) {
     if (!costStr || costStr === "Missing" || costStr === "(Missing)") {
         return { totalCostDisplay: "TBD", breakdownHtml: "", hasMultiple: false };
