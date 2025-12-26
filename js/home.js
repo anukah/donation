@@ -61,9 +61,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
-
-
 // GALLARY SECTION
 
 document.addEventListener('DOMContentLoaded', () => {
