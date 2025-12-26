@@ -46,6 +46,18 @@ if (navToggle && navMenu) {
     });
 }
 
+// ===== Mobile Dropdown Toggle =====
+document.querySelectorAll('#navMenu .border-b > a').forEach(toggle => {
+    // Only attach to dropdown toggles (ones with a next sibling ul)
+    const submenu = toggle.nextElementSibling;
+    if (submenu && submenu.tagName === 'UL') {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            submenu.classList.toggle('hidden');
+        });
+    }
+});
+
 // ===== Smooth Scroll for Anchor Links =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

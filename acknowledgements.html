@@ -321,14 +321,14 @@
         });
 
         // Mobile dropdown toggles
-        document.querySelectorAll('#navMenu .border-b a[href="#"]').forEach(toggle => {
-            toggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                const submenu = toggle.nextElementSibling;
-                if (submenu) {
+        document.querySelectorAll('#navMenu .border-b > a').forEach(toggle => {
+            const submenu = toggle.nextElementSibling;
+            if (submenu && submenu.tagName === 'UL') {
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault();
                     submenu.classList.toggle('hidden');
-                }
-            });
+                });
+            }
         });
 
         // Carousel functionality
