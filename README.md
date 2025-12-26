@@ -33,7 +33,7 @@ donation/
 ├── index.html          # Homepage
 ├── about.html          # About page
 ├── donate.html         # Donation page
-├── why-support.html    # Why Support page
+├── acknowledgements.html    # Why Support page
 ├── assets/             # Images and media
 ├── js/                 # JavaScript files
 ├── docs/               # Documentation
