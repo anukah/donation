@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
         header.className = "relative z-30 bg-white shadow-sm border border-gray-200 p-4 md:p-6 mb-4 flex items-center justify-between cursor-pointer group select-none hover:border-blue-200 transition-colors duration-200";
         header.innerHTML = `
             <div class="flex flex-col md:flex-row md:items-center">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2 md:mb-0 border-l-4 border-blue-900 pl-4 group-hover:text-blue-900 transition-colors">${dept.faculty}</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2 md:mb-0 border-l-4 border-blue-900 pl-4 group-hover:text-blue-900 transition-colors uppercase">${dept.faculty}</h2>
                 <span class="md:ml-4 bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 uppercase tracking-wider w-fit">
                     ${dept.projects.length} Projects
                 </span>
@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </span>
                     </div>
 
-                    <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">${proj.title}</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug uppercase">${proj.title}</h3>
                     
                     <div class="flex-1">
                         <p class="text-gray-600 text-xs leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-200">
