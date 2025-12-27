@@ -1,13 +1,867 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>University Infrastructure | Rebuild Peradeniya</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Infrastructure | Rebuild Peradeniya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .dropdown-menu { opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; }
+    </style>
 </head>
-<body class="font-sans">
-    <!-- Page: University Infrastructure & Common Facilities -->
-    <!-- TODO: Add content -->
+
+<body class="font-sans text-gray-800">
+<nav
+      class="fixed top-0 left-0 right-0 w-full z-50 bg-white border-b border-gray-200"
+      id="navbar"
+    >
+      <div class="w-full mx-auto px-6 py-4 flex items-center justify-between">
+        <a
+          href="../index.html"
+          class="flex items-center gap-1.5 md:gap-3 flex-shrink min-w-0"
+        >
+          <div class="w-9 h-9 md:w-12 md:h-12 lg:w-10 lg:h-10 flex-shrink-0">
+            <img
+              src="../assets/Uni-logo-500.png"
+              alt="University of Peradeniya Logo"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="flex flex-col justify-center min-w-0">
+            <span
+              class="text-xl md:text-3xl lg:text-4xl font-extrabold text-black leading-none truncate"
+              >REBUILD PERA</span
+            >
+            <span class="text-[0.5rem] md:text-xs text-gray-500 truncate"
+              >A DISASTER RECOVERY & RESILIENCE INITIATIVE</span
+            >
+          </div>
+        </a>
+
+        <button
+          class="xl:hidden flex flex-col gap-1.5 p-2"
+          id="navToggle"
+          aria-label="Toggle navigation"
+        >
+          <span class="w-6 h-0.5 bg-black transition-all"></span>
+          <span class="w-6 h-0.5 bg-black transition-all"></span>
+          <span class="w-6 h-0.5 bg-black transition-all"></span>
+        </button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden xl:flex items-center gap-1">
+          <li>
+            <a
+              href="../index.html"
+              class="px-4 py-2 text-sm font-medium text-black hover:underline"
+              >HOME</a
+            >
+          </li>
+          <li class="nav-dropdown relative">
+            <a
+              href="#"
+              class="flex items-center px-4 py-2 text-sm font-medium text-black hover:underline"
+              >THE DAMAGE
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-down-icon lucide-chevron-down"
+              >
+                <path d="m6 9 6 6 6-6" /></svg></a>
+            <ul
+              class="dropdown-menu absolute top-full left-0 min-w-[260px] p-2 bg-white border border-gray-200"
+            >
+              <li>
+                <a
+                  href="background.html"
+                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  >BACKGROUND & SITUATION</a
+                >
+              </li>
+              <li>
+                <a
+                  href="management.html"
+                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  >FACULTY OF MANAGEMENT</a
+                >
+              </li>
+              <li>
+                <a
+                  href="veterinary.html"
+                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  >FACULTY OF VETERINARY MEDICINE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="agriculture.html"
+                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  >FACULTY OF AGRICULTURE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="infrastructure.html"
+                  class="block px-4 py-3 text-sm font-bold hover:bg-gray-100"
+                  >UNIVERSITY INFRASTRUCTURE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="gallery.html"
+                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  >PHOTO & VIDEO GALLERY</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="../projects.html"
+              class="px-4 py-2 text-sm font-medium text-black hover:underline"
+              >PROJECTS</a
+            >
+          </li>
+          <li>
+            <a
+              href="../acknowledgements.html"
+              class="px-4 py-2 text-sm font-medium text-black hover:underline"
+              >ACKNOWLEDGEMENTS</a
+            >
+          </li>
+          <li>
+            <a
+              href="../donate.html"
+              class="px-6 py-2 text-sm font-semibold bg-black text-white hover:bg-gray-800"
+              >DONATE NOW</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu (appears below navbar) -->
+      <div
+        class="hidden xl:hidden flex-col w-full bg-white border-t border-gray-200"
+        id="navMenu"
+      >
+        <ul class="flex flex-col px-6 py-4">
+          <li>
+            <a
+              href="index.html"
+              class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100"
+              >HOME</a
+            >
+          </li>
+          <li class="border-b border-gray-100">
+            <a
+              href="#"
+              class="flex items-center py-2 text-sm font-medium text-black hover:underline"
+              >THE DAMAGE
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-down-icon lucide-chevron-down"
+              >
+                <path d="m6 9 6 6 6-6" /></svg></a>
+            <ul class="hidden pl-4 pb-2">
+              <li>
+                <a
+                  href="damage/background.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >BACKGROUND & SITUATION</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/management.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >FACULTY OF MANAGEMENT</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/veterinary.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >FACULTY OF VETERINARY MEDICINE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/agriculture.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >FACULTY OF AGRICULTURE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/infrastructure.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >UNIVERSITY INFRASTRUCTURE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/gallery.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >PHOTO & VIDEO GALLERY</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="projects.html"
+              class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100"
+              >PROJECTS</a
+            >
+          </li>
+          <li>
+            <a
+              href="acknowledgements.html"
+              class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100"
+              >ACKNOWLEDGEMENTS</a
+            >
+          </li>
+          <li class="pt-4">
+            <a
+              href="donate.html"
+              class="block w-full py-3 text-sm font-semibold bg-black text-white text-center hover:bg-gray-800"
+              >DONATE NOW</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- HERO SECTION -->
+    <section
+    id="inf_hero"
+    class="relative min-h-screen flex flex-col justify-center py-32 text-white"
+    style="
+        background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('../assets/home/hero.jpg') center/cover no-repeat;
+        background-attachment: fixed;
+    "
+    >
+    <div class="max-w-7xl mx-auto px-6">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4">
+        UNIVERSITY INFRASTRUCTURE
+        </h1>
+        <p class="text-gray-300 text-lg max-w-2xl">
+        Widespread damage across campus facilities
+        </p>
+    </div>
+    </section>
+
+    <!-- Overview section -->
+    <section id="inf_overview" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase mb-4">
+        Overview
+        </span>
+
+        <h2 class="text-3xl md:text-4xl font-bold uppercase mb-8">
+        Critical University Infrastructure at Risk
+        </h2>
+
+        <!-- Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+        <p class="text-gray-700 leading-relaxed">
+            The University of Peradeniya’s infrastructure forms the backbone of
+            <strong class="text-black">academic delivery, student life, administrative operations, and national-level services</strong>.
+            Recent flooding and landslides caused widespread damage to sports facilities,
+            residential halls, IT systems, cultural landmarks, and essential service units,
+            disrupting day-to-day university functions.
+        </p>
+
+        <p class="text-xl font-bold text-black italic border-l-4 border-black pl-6">
+            Damage to these systems compromises safety, continuity of education,
+            institutional operations, and the long-term resilience of Sri Lanka’s
+            premier higher education institution.
+        </p>
+
+        </div>
+
+    </div>
+    </section>
+
+
+    <!-- SPORTS FACILITIES -->
+    <section id="inf_sports" class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Section Label -->
+        <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase mb-4">
+        Sports Infrastructure
+        </span>
+
+        <!-- Section Heading -->
+        <h2 class="text-3xl md:text-4xl font-bold uppercase mb-12">
+        Sports Facilities
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        <!-- University Gymnasium -->
+        <div class="bg-white border border-gray-300 hover:border-black transition-all duration-300">
+            <div class="h-64 overflow-hidden">
+            <img 
+                src="../assets/gym/gym_sports.jpg" 
+                alt="Flood damage to University Gymnasium"
+                class="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                loading="lazy"
+            >
+            </div>
+
+            <div class="p-8">
+            <h3 class="text-xl font-bold uppercase mb-4 text-black">
+                University Gymnasium
+            </h3>
+
+            <p class="text-gray-700 leading-relaxed mb-4">
+                The university gymnasium is a flagship multi-purpose facility used for
+                sports competitions, convocations, examinations, and national-level
+                events. Flooding resulted in extensive damage to internal finishes,
+                electrical systems, and essential sporting infrastructure.
+            </p>
+
+            <ul class="text-sm text-gray-700 space-y-2 mb-6 list-disc list-inside">
+                <li>Severe damage to wooden flooring and interior finishes</li>
+                <li>Electrical wiring, lighting, and control systems compromised</li>
+                <li>Sports equipment and storage facilities rendered unusable</li>
+            </ul>
+
+            <p class="text-sm font-bold text-black border-l-4 border-black pl-4">
+                Facility currently unsuitable for large-scale academic and sporting events.
+            </p>
+            </div>
+        </div>
+
+        <!-- Swimming Pool Complex -->
+        <div class="bg-white border border-gray-300 hover:border-black transition-all duration-300">
+            <div class="h-64 overflow-hidden">
+            <img 
+                src="../assets/pool/pool_filter.jpg" 
+                alt="Damage to University Swimming Pool Complex"
+                class="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                loading="lazy"
+            >
+            </div>
+
+            <div class="p-8">
+            <h3 class="text-xl font-bold uppercase mb-4 text-black">
+                Swimming Pool Complex
+            </h3>
+
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Prolonged flooding caused structural and mechanical damage to the
+                swimming pool complex, affecting both safety and operational systems.
+                Damage to retaining walls and water circulation infrastructure led to
+                the suspension of all aquatic activities.
+            </p>
+
+            <ul class="text-sm text-gray-700 space-y-2 mb-6 list-disc list-inside">
+                <li>Structural instability in surrounding retaining walls</li>
+                <li>Pumping, filtration, and circulation systems damaged</li>
+                <li>Water quality control and safety standards compromised</li>
+            </ul>
+
+            <p class="text-sm font-bold text-black border-l-4 border-black pl-4">
+                Facility declared unsafe for student and staff use.
+            </p>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+    </section>
+
+
+
+    <!-- IT CENTRE -->
+    <section id="inf_ITcentre" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Section Label -->
+        <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase mb-4">
+        IT Infrastructure
+        </span>
+
+        <!-- Section Heading -->
+        <h2 class="text-3xl md:text-4xl font-bold uppercase mb-12">
+        University IT Centre
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    
+
+        <!-- Damage Overview -->
+        <div class="border-l-4 border-black pl-6 bg-gray-50 p-6">
+            <h3 class="text-xl font-bold uppercase mb-4 text-black">
+            Damage Overview
+            </h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">
+            The University IT Centre functions as the digital backbone of academic,
+            administrative, and student-facing services. Flooding caused extensive
+            damage to servers, networking equipment, and end-user workstations,
+            resulting in widespread service disruptions across the university.
+            </p>
+
+            <ul class="text-gray-700 space-y-2 list-disc list-inside">
+            <li>Three core servers completely destroyed</li>
+            <li>Thirty staff and student workstations rendered inoperable</li>
+            <li>Network switches, routers, and core connectivity equipment damaged</li>
+            </ul>
+        </div>
+
+        <!-- Operational Impact -->
+        <div class="border-l-4 border-black pl-6 bg-gray-50 p-6">
+            <h3 class="text-xl font-bold uppercase mb-4 text-black">
+            Operational Impact
+            </h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">
+            Damage to the IT Centre severely affected mission-critical systems,
+            including financial management, student records, learning management
+            platforms, and internal communications. Recovery of these systems is
+            essential to restore institutional continuity and academic delivery.
+            </p>
+
+            <ul class="text-gray-700 space-y-2 list-disc list-inside">
+            <li>Disruption to online teaching and learning platforms</li>
+            <li>Interruption of administrative and financial operations</li>
+            <li>Increased cybersecurity and data integrity risks</li>
+            </ul>
+        </div>
+
+        </div>
+
+        <!-- Project Callout -->
+        <div class="mt-12 bg-gray-100 border border-gray-300 p-6">
+        <p class="text-sm font-bold uppercase text-black mb-2">
+            Related Recovery Project
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+            <strong class="text-black">E1 – IT Infrastructure Recovery</strong><br>
+            Restoration and replacement of servers, network equipment, and core IT
+            systems to re-establish secure, reliable university-wide digital services.
+        </p>
+        <p class="mt-4 text-sm font-bold text-black">
+            Estimated Cost: Rs. 102.84 Million
+        </p>
+        </div>
+
+    </div>
+    </section>
+
+    <!-- RESIDENTIAL INFRASTRUCTURE -->
+    <section id="inf_resident" class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Section Label -->
+        <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase mb-4">
+        Residential Infrastructure
+        </span>
+
+        <!-- Section Heading -->
+        <h2 class="text-3xl md:text-4xl font-bold uppercase mb-12">
+        Student & Staff Accommodation
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Sarasavi Medura -->
+        <div class="bg-white border border-gray-300 hover:border-black transition-all duration-300">
+            <div class="w-full h-48 border-2 border-dashed border-gray-400 flex items-center justify-center text-gray-500 text-sm uppercase tracking-wider">
+            Image Placeholder
+            </div>
+
+            <div class="p-6">
+            <h3 class="text-lg font-bold uppercase mb-3 text-black">
+                Sarasavi Medura
+            </h3>
+
+            <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                Sarasavi Medura provides residential accommodation for undergraduate
+                students. Flooding affected lower floors, common facilities, and
+                essential service systems, displacing residents and disrupting
+                student life.
+            </p>
+
+            <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside">
+                <li>Accommodation impacted for over 144 students</li>
+                <li>Water damage to rooms, electrical fittings, and furniture</li>
+                <li>Sanitation and drainage systems compromised</li>
+            </ul>
+            </div>
+        </div>
+
+        <!-- Seneka Bibile Hall -->
+        <div class="bg-white border border-gray-300 hover:border-black transition-all duration-300">
+            <div class="w-full h-48 border-2 border-dashed border-gray-400 flex items-center justify-center text-gray-500 text-sm uppercase tracking-wider">
+            Image Placeholder
+            </div>
+
+            <div class="p-6">
+            <h3 class="text-lg font-bold uppercase mb-3 text-black">
+                Seneka Bibile Hall
+            </h3>
+
+            <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                Seneka Bibile Hall sustained both structural and utility-related damage
+                due to floodwater ingress, affecting student safety, habitability,
+                and access to essential services.
+            </p>
+
+            <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside">
+                <li>Damage to walls, floors, and internal finishes</li>
+                <li>Electrical and water supply systems affected</li>
+                <li>Restricted access to affected residential zones</li>
+            </ul>
+            </div>
+        </div>
+
+        <!-- Staff Quarters -->
+        <div class="bg-white border border-gray-300 hover:border-black transition-all duration-300">
+            <div class="w-full h-48 border-2 border-dashed border-gray-400 flex items-center justify-center text-gray-500 text-sm uppercase tracking-wider">
+            Image Placeholder
+            </div>
+
+            <div class="p-6">
+            <h3 class="text-lg font-bold uppercase mb-3 text-black">
+                Staff Quarters
+            </h3>
+
+            <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                Flooding affected multiple staff housing units and access roads,
+                disrupting residential stability and daily commuting for academic
+                and non-academic staff members.
+            </p>
+
+            <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside">
+                <li>Water damage to housing units and household infrastructure</li>
+                <li>Access roads and drainage systems damaged</li>
+                <li>Temporary relocation required for affected households</li>
+            </ul>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+    </section>
+
+
+    <!-- CULTURAL & ADMINISTRATIVE FACILITIES -->
+    <section id="inf_cult&admin" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Section Label -->
+        <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase mb-4">
+        Cultural & Administrative Infrastructure
+        </span>
+
+        <!-- Section Heading -->
+        <h2 class="text-3xl md:text-4xl font-bold uppercase mb-12">
+        Cultural & Administrative Facilities
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        <!-- Cultural Facilities -->
+        <div class="bg-gray-50 border-l-4 border-black p-8">
+            <h3 class="text-2xl font-bold uppercase mb-4 text-black">
+            Cultural Landmarks
+            </h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">
+            Cultural facilities at the University of Peradeniya play a vital role in
+            student life, artistic expression, and national-level academic and
+            cultural engagement. Flooding and ground instability caused damage to
+            key venues, affecting their safety and continued use.
+            </p>
+
+            <ul class="text-gray-700 space-y-3 list-disc list-inside">
+            <li>
+                <strong>Open Air Theatre:</strong> Damage to seating structures, stage
+                flooring, and surrounding access areas, limiting its use for performances
+                and public events.
+            </li>
+            <li>
+                <strong>University Pre-School:</strong> Declared unsafe due to site
+                vulnerability; relocation required to ensure child safety.
+            </li>
+            </ul>
+        </div>
+
+        <!-- Administrative Facilities -->
+        <div class="bg-gray-50 border-l-4 border-black p-8">
+            <h3 class="text-2xl font-bold uppercase mb-4 text-black">
+            Administrative Facilities
+            </h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">
+            Several administrative and service units sustained flood-related damage,
+            disrupting maintenance operations, logistics, and internal service
+            delivery essential for university functioning.
+            </p>
+
+            <ul class="text-gray-700 space-y-3 list-disc list-inside">
+            <li>
+                <strong>Works Department:</strong> Facilities rendered unusable,
+                requiring relocation to maintain campus maintenance and engineering
+                operations.
+            </li>
+            <li>
+                <strong>General Stores:</strong> Flood damage to storage areas and
+                inventory, affecting procurement, warehousing, and distribution of
+                essential supplies.
+            </li>
+            </ul>
+        </div>
+
+        </div>
+
+    </div>
+    </section>
+
+    <!-- EQUIPMENT SUMMARY -->
+    <section id="inf_equipment" class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Section Label -->
+        <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase mb-4">
+        Equipment Summary
+        </span>
+
+        <!-- Section Heading -->
+        <h2 class="text-3xl md:text-4xl font-bold uppercase mb-6">
+        Damaged Equipment Overview
+        </h2>
+
+        <p class="max-w-4xl text-gray-700 leading-relaxed mb-12">
+        Flooding caused extensive damage to computing and networking equipment
+        critical to academic delivery, administration, and digital services.
+        The table below categorizes affected assets by quantity, replacement
+        priority, and estimated cost to support recovery planning and funding
+        decisions.
+        </p>
+
+        <!-- Table -->
+        <div class="overflow-x-auto bg-white border border-gray-300">
+        <table class="w-full text-sm">
+            <thead class="bg-gray-200">
+            <tr>
+                <th class="px-6 py-4 text-left font-bold text-black border-b border-gray-300">
+                Equipment Category
+                </th>
+                <th class="px-6 py-4 text-left font-bold text-black border-b border-gray-300">
+                Quantity Affected
+                </th>
+                <th class="px-6 py-4 text-left font-bold text-black border-b border-gray-300">
+                Priority
+                </th>
+                <th class="px-6 py-4 text-left font-bold text-black border-b border-gray-300">
+                Estimated Replacement Cost (Rs.)
+                </th>
+                <th class="px-6 py-4 text-left font-bold text-black border-b border-gray-300">
+                Remarks
+                </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr class="border-b border-gray-200">
+                <td class="px-6 py-4 font-medium text-gray-800">
+                Desktop Computers
+                </td>
+                <td class="px-6 py-4 text-gray-700">
+                309 Units
+                </td>
+                <td class="px-6 py-4">
+                <span class="inline-block px-2 py-1 text-xs font-bold bg-red-100 text-red-800">
+                    Critical
+                </span>
+                </td>
+                <td class="px-6 py-4 text-gray-700">
+                92.7 Million
+                </td>
+                <td class="px-6 py-4 text-gray-600">
+                Teaching labs, offices, and student-access systems
+                </td>
+            </tr>
+
+            <tr class="border-b border-gray-200 bg-gray-50">
+                <td class="px-6 py-4 font-medium text-gray-800">
+                Laptop Computers
+                </td>
+                <td class="px-6 py-4 text-gray-700">
+                17 Units
+                </td>
+                <td class="px-6 py-4">
+                <span class="inline-block px-2 py-1 text-xs font-bold bg-yellow-100 text-yellow-800">
+                    High
+                </span>
+                </td>
+                <td class="px-6 py-4 text-gray-700">
+                6.8 Million
+                </td>
+                <td class="px-6 py-4 text-gray-600">
+                Administrative and operational staff use
+                </td>
+            </tr>
+
+            <tr class="border-b border-gray-200">
+                <td class="px-6 py-4 font-medium text-gray-800">
+                Servers
+                </td>
+                <td class="px-6 py-4 text-gray-700">
+                3 Units
+                </td>
+                <td class="px-6 py-4">
+                <span class="inline-block px-2 py-1 text-xs font-bold bg-red-100 text-red-800">
+                    Critical
+                </span>
+                </td>
+                <td class="px-6 py-4 text-gray-700">
+                18.5 Million
+                </td>
+                <td class="px-6 py-4 text-gray-600">
+                Core systems supporting finance, LMS, and records
+                </td>
+            </tr>
+
+            <tr class="bg-gray-50">
+                <td class="px-6 py-4 font-medium text-gray-800">
+                Network Equipment
+                </td>
+                <td class="px-6 py-4 text-gray-700">
+                Multiple Units
+                </td>
+                <td class="px-6 py-4">
+                <span class="inline-block px-2 py-1 text-xs font-bold bg-yellow-100 text-yellow-800">
+                    High
+                </span>
+                </td>
+                <td class="px-6 py-4 text-gray-700">
+                7.9 Million
+                </td>
+                <td class="px-6 py-4 text-gray-600">
+                Switches, routers, and campus connectivity hardware
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- Summary Callout -->
+        <div class="mt-10 bg-white border-l-4 border-black p-6 max-w-4xl">
+        <p class="text-sm font-bold uppercase text-black mb-2">
+            Total Estimated Equipment Loss
+        </p>
+        <p class="text-2xl font-bold text-black">
+            Approximately Rs. 125.9 Million
+        </p>
+        <p class="text-gray-700 mt-2">
+            This estimate reflects immediate replacement costs required to restore
+            essential academic, administrative, and digital operations.
+        </p>
+        </div>
+
+    </div>
+    </section>
+
+    <style>
+    /* For Chrome, Safari and Opera */
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* For IE, Edge and Firefox */
+    .hide-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    </style>
+
+    <!--Footer-->
+    <footer class="bg-black text-gray-400 pt-20 pb-8 border-t border-gray-800 w-full">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="lg:w-10 lg:h-10 md:w-16 md:h-16 w-9 h-9">
+                            <img src="../assets/Uni-logo-500.png" alt="University of Peradeniya Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <span class="text-2xl font-extrabold text-white leading-none">REBUILD PERA</span>
+                            <span class="text-[0.55rem] text-gray-500">A DISASTER RECOVERY & RESILIENCE INITIATIVE</span>
+                        </div>
+                    </div>
+                    <p class="text-xs leading-relaxed">
+                        A RESTORATION AND RESILIENCE-BUILDING INITIATIVE BY THE UNIVERSITY OF PERADENIYA FOLLOWING THE DITWAH CYCLONE FLOODS.
+
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase leading-tight tracking-tight mb-6">QUICK LINKS</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-sm hover:text-white transition-colors">HOME</a></li>
+                        <li><a href="damage/background.html" class="text-sm hover:text-white transition-colors">THE DAMAGE</a></li>
+                        <li><a href="projects.html" class="text-sm hover:text-white transition-colors">PROJECTS</a></li>
+                        <li><a href="acknowledgements.html" class="text-sm hover:text-white transition-colors">WHY SUPPORT US</a></li>
+                        <li><a href="about.html" class="text-sm hover:text-white transition-colors">ABOUT</a></li>
+                        <li><a href="donate.html" class="text-sm hover:text-white transition-colors">DONATE</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">PROJECTS</h4>
+                    <ul class="space-y-3">
+                        <li><a href="projects.html#ict" class="text-sm hover:text-white transition-colors">ICT RECOVERY</a></li>
+                        <li><a href="projects.html#laboratory" class="text-sm hover:text-white transition-colors">LABORATORY EQUIPMENT</a></li>
+                        <li><a href="projects.html#welfare" class="text-sm hover:text-white transition-colors">STUDENT WELFARE</a></li>
+                        <li><a href="projects.html#capital" class="text-sm hover:text-white transition-colors">CAPITAL WORKS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">CONTACT</h4>
+                    <p class="text-sm mb-4">UNIVERSITY OF PERADENIYA,<br>PERADENIYA, SRI LANKA</p>
+                    <a href="mailto:rebuild@pdn.ac.lk" class="text-white font-medium hover:underline">bursar@pdn.ac.lk</a>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="w-10 h-10 border border-gray-600 flex items-center justify-center hover:bg-white hover:border-white hover:text-black transition-all" aria-label="Facebook">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 border border-gray-600 flex items-center justify-center hover:bg-white hover:border-white hover:text-black transition-all" aria-label="Twitter">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 border border-gray-600 flex items-center justify-center hover:bg-white hover:border-white hover:text-black transition-all" aria-label="LinkedIn">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/home.js"></script>
+
 </body>
 </html>
