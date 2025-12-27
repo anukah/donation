@@ -1,13 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Background & Situation | Rebuild Peradeniya</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="font-sans">
-    <!-- Page: Background & Situation Analysis -->
-    <!-- TODO: Add content -->
-</body>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      .nav-dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+      /* Mobile hamburger animation */
+      #navToggle span {
+        display: block;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+      #navToggle.open span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      #navToggle.open span:nth-child(2) {
+        opacity: 0;
+      }
+      #navToggle.open span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+    </style>
+  </head>
+  <body class="font-sans">
+    <!-- Navigation navbar -->
+    <nav
+      class="fixed top-0 left-0 right-0 w-full z-50 bg-white border-b border-gray-200"
+      id="navbar"
+    >
+      <div class="w-full mx-auto px-6 py-4 flex items-center justify-between">
+        <a
+          href="../index.html"
+          class="flex items-center gap-1.5 md:gap-3 flex-shrink min-w-0"
+        >
+          <div class="w-9 h-9 md:w-12 md:h-12 lg:w-10 lg:h-10 flex-shrink-0">
+            <img
+              src="../assets/Uni-logo-500.png"
+              alt="University of Peradeniya Logo"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="flex flex-col justify-center min-w-0">
+            <span
+              class="text-xl md:text-3xl lg:text-4xl font-extrabold text-black leading-none truncate"
+              >REBUILD PERA</span
+            >
+            <span class="text-[0.5rem] md:text-xs text-gray-500 truncate"
+              >A DISASTER RECOVERY & RESILIENCE INITIATIVE</span
+            >
+          </div>
+        </a>
+
+        <button
+          class="xl:hidden flex flex-col gap-1.5 p-2"
+          id="navToggle"
+          aria-label="Toggle navigation"
+        >
+          <span class="w-6 h-0.5 bg-black transition-all"></span>
+          <span class="w-6 h-0.5 bg-black transition-all"></span>
+          <span class="w-6 h-0.5 bg-black transition-all"></span>
+        </button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden xl:flex items-center gap-1">
+          <li>
+            <a
+              href="/index.html"
+              class="px-4 py-2 text-sm font-medium text-black hover:underline"
+              >HOME</a
+            >
+          </li>
+          <li class="nav-dropdown relative">
+            <a
+              href="#"
+              class="flex items-center px-4 py-2 text-sm font-medium text-black hover:underline"
+              >THE DAMAGE
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-down-icon lucide-chevron-down"
+              >
+                <path d="m6 9 6 6 6-6" /></svg></a>
+            <ul
+              class="dropdown-menu absolute top-full left-0 min-w-[260px] p-2 bg-white border border-gray-200"
+            >
+              <li>
+                <a
+                  href="/damage/background.html"
+                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  >BACKGROUND & SITUATION</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/damage/management.html"
+                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  >FACULTY OF MANAGEMENT</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/damage/veterinary.html"
+                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  >FACULTY OF VETERINARY MEDICINE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/damage/agriculture.html"
+                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  >FACULTY OF AGRICULTURE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/infrastructure.html"
+                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  >UNIVERSITY INFRASTRUCTURE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/gallery.html"
+                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  >PHOTO & VIDEO GALLERY</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="../projects.html"
+              class="px-4 py-2 text-sm font-medium text-black hover:underline"
+              >PROJECTS</a
+            >
+          </li>
+          <li>
+            <a
+              href="../acknowledgements.html"
+              class="px-4 py-2 text-sm font-medium text-black hover:underline"
+              >ACKNOWLEDGEMENTS</a
+            >
+          </li>
+          <li>
+            <a
+              href="../donate.html"
+              class="px-6 py-2 text-sm font-semibold bg-black text-white hover:bg-gray-800"
+              >DONATE NOW</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu (appears below navbar) -->
+      <div
+        class="hidden xl:hidden flex-col w-full bg-white border-t border-gray-200"
+        id="navMenu"
+      >
+        <ul class="flex flex-col px-6 py-4">
+          <li>
+            <a
+              href="index.html"
+              class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100"
+              >HOME</a
+            >
+          </li>
+          <li class="border-b border-gray-100 has-submenu">
+            <a
+              href="#"
+              aria-expanded="false"
+              class="flex items-center py-2 text-sm font-medium text-black hover:underline"
+            >
+              THE DAMAGE
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="ml-auto transition-transform duration-200 rotate-0 submenu-chev"
+                aria-hidden="true"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </a>
+            <ul class="hidden pl-4 pb-2">
+              <li>
+                <a
+                  href="damage/background.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >BACKGROUND & SITUATION</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/management.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >FACULTY OF MANAGEMENT</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/veterinary.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >FACULTY OF VETERINARY MEDICINE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/agriculture.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >FACULTY OF AGRICULTURE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/infrastructure.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >UNIVERSITY INFRASTRUCTURE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="damage/gallery.html"
+                  class="block py-2 text-sm text-gray-600 hover:text-black"
+                  >PHOTO & VIDEO GALLERY</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="projects.html"
+              class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100"
+              >PROJECTS</a
+            >
+          </li>
+          <li>
+            <a
+              href="acknowledgements.html"
+              class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100"
+              >ACKNOWLEDGEMENTS</a
+            >
+          </li>
+          <li class="pt-4">
+            <a
+              href="donate.html"
+              class="block w-full py-3 text-sm font-semibold bg-black text-white text-center hover:bg-gray-800"
+              >DONATE NOW</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero section -->
+
+    <section
+      class="relative min-h-screen flex flex-col justify-center items-center py-32 text-white"
+      id="hero"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+          url('/assets/home/hero.jpg') center/cover no-repeat;
+        background-attachment: fixed;
+      "
+    >
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-6">
+        <h1
+          class="lg-text-4xl md:text-7xl text-5xl font-bold text-white leading-tight mb-4 mt-12 break-words"
+        >
+          BACKGROUND AND SITUATION
+        </h1>
+        <p
+          class="text-xs lg:text-lg text-gray-400 max-w-2xl mb-12 leading-relaxed text-left uppercase"
+        >
+          Understanding the impact of the Ditwah Cyclone on Peradeniya
+        </p>
+      </div>
+    </section>
+
+    <!-- Ditwah Cyclone Section -->
+    <section id="cyclone" class="bg-white py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Badge -->
+        <span
+          class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase tracking-wider mb-3"
+        >
+          The Disaster
+        </span>
+
+        <!-- Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-black uppercase mb-12">
+          The Ditwah Cyclone
+        </h2>
+
+        <!-- Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <p class="text-gray-700 leading-relaxed">
+            The Ditwah Cyclone brought unprecedented rainfall to large parts of
+            Sri Lanka, triggering widespread
+            <strong class="text-black">floods and landslides</strong>. River
+            systems overflowed, hillsides became unstable, and critical
+            infrastructure across the country was severely damaged.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed">
+            While many districts were affected, the scale and intensity of the
+            disaster placed extraordinary pressure on regions located within
+            major river basins and steep terrain — including the University of
+            Peradeniya.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Peradeniya Was Affected -->
+    <section id="why-peradeniya" class="bg-gray-100 py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Badge -->
+        <span
+          class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase tracking-wider mb-3"
+        >
+          Vulnerability
+        </span>
+
+        <!-- Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-black uppercase mb-12">
+          Why Peradeniya Was Severely Affected
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <p class="text-gray-700 leading-relaxed">
+            The University of Peradeniya is located within the Mahaweli River
+            basin and surrounded by
+            <strong class="text-black">hilly and sloped terrain</strong>. This
+            geographic sensitivity significantly increased exposure to flooding,
+            erosion, and slope failures during extreme rainfall.
+          </p>
+
+          <!-- Impact List -->
+          <div class="bg-white border border-gray-300 p-8">
+            <h3 class="text-xl font-bold uppercase mb-4">Observed Impacts</h3>
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 text-sm"
+            >
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-black mt-1.5 flex-shrink-0"
+                ></div>
+                <div>Severe flooding across low-lying areas</div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-black mt-1.5 flex-shrink-0"
+                ></div>
+                <div>Slope failures and soil erosion</div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-black mt-1.5 flex-shrink-0"
+                ></div>
+                <div>Landslides affecting buildings and access roads</div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-black mt-1.5 flex-shrink-0"
+                ></div>
+                <div>Damage to utilities and internal infrastructure</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About the University -->
+    <section id="about-university" class="bg-white py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Badge -->
+        <span
+          class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase tracking-wider mb-3"
+        >
+          Context
+        </span>
+
+        <!-- Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-black uppercase mb-12">
+          About the University of Peradeniya
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <p class="text-gray-700 leading-relaxed">
+            The University of Peradeniya is
+            <strong class="text-black"
+              >Sri Lanka’s oldest and largest comprehensive university</strong
+            >, serving tens of thousands of students across multiple faculties.
+            It plays a critical national role in education, research,
+            healthcare, agriculture, and professional training.
+          </p>
+
+          <!-- Quote -->
+          <p
+            class="text-xl font-bold text-black italic border-l-4 border-black pl-6"
+          >
+            “The total estimated damage to the University exceeds
+            <span class="whitespace-nowrap">LKR 4 billion</span>.”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Immediate Impacts -->
+    <section id="impacts" class="bg-gray-100 py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Badge -->
+        <span
+          class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase tracking-wider mb-3"
+        >
+          Consequences
+        </span>
+
+        <!-- Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-black uppercase mb-12">
+          Immediate Impacts
+        </h2>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="bg-white border border-gray-300 p-8 hover:border-black transition-all duration-300"
+          >
+            <h3 class="text-lg font-bold uppercase mb-3">
+              Academic Disruption
+            </h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              Teaching, laboratory work, examinations, and research activities
+              were suspended due to unsafe conditions and damaged facilities.
+            </p>
+          </div>
+
+          <div
+            class="bg-white border border-gray-300 p-8 hover:border-black transition-all duration-300"
+          >
+            <h3 class="text-lg font-bold uppercase mb-3">Safety Risks</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              Flooded buildings, unstable slopes, and damaged infrastructure
+              posed serious safety risks to students, staff, and residents.
+            </p>
+          </div>
+
+          <div
+            class="bg-white border border-gray-300 p-8 hover:border-black transition-all duration-300"
+          >
+            <h3 class="text-lg font-bold uppercase mb-3">
+              Student Displacement
+            </h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              More than <strong class="text-black">1,300 students</strong> were
+              displaced from hostels and residences, requiring immediate
+              relocation and support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      (function () {
+        const navToggle = document.getElementById("navToggle");
+        const navMenu = document.getElementById("navMenu");
+        if (navToggle && navMenu) {
+          navToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("hidden");
+            this.classList.toggle("open");
+            const expanded = !navMenu.classList.contains("hidden");
+            this.setAttribute("aria-expanded", expanded);
+          });
+        }
+
+        document
+          .querySelectorAll("#navMenu .has-submenu > a")
+          .forEach(function (a) {
+            a.addEventListener("click", function (e) {
+              e.preventDefault();
+              const submenu = this.nextElementSibling;
+              if (!submenu) return;
+              submenu.classList.toggle("hidden");
+              const chev = this.querySelector(".submenu-chev");
+              if (chev) chev.classList.toggle("rotate-180");
+              const expanded = submenu && !submenu.classList.contains("hidden");
+              this.setAttribute("aria-expanded", expanded);
+            });
+          });
+      })();
+    </script>
+  </body>
 </html>
