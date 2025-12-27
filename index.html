@@ -97,9 +97,10 @@
             <h1 class="lg-text-4xl md:text-7xl text-5xl font-bold text-white leading-tight mb-2 align-left mt-12">
                 HELP REBUILD PERADENIYA : A LEGACY IN PERIL
             </h1>
-            <p class="text-xs lg:text-lg text-gray-400 max-w-2xl mb-12 leading-relaxed text-left">
-                THE DITWAH CYCLONE FLOODS DEVASTATED SRI LANKA'S OLDEST AND LARGEST COMPREHENSIVE UNIVERSITY. 
-                </br>HELP US RESTORE AND REBUILD.
+            <p class="text-xs lg:text-lg text-gray-400 max-w-2xl mb-12 leading-relaxed text-left uppercase">
+                Restoration and Disaster-Resilient Rehabilitation of the
+                University of Peradeniya Following </br>
+                the Ditwah Cyclone Floods
             </p>
             <!-- Buttons -->
             <div class="flex flex-col md:flex-row gap-4 mb-1">
@@ -116,7 +117,10 @@
             <!-- Stats -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-[20%]">
                 <div class="border border-gray-600 p-6 text-center flex flex-col items-center justify-center">
-                    <span class="text-4xl font-extrabold text-white" data-count="4">0</span>
+                    <div class="flex items-center justify-center">
+                        <span class="text-4xl font-extrabold text-white" data-count="4">0</span>
+                        <span class="text-2xl font-semibold text-white"> +</span>
+                    </div>
                     <span class="text-lg font-semibold text-white"> BILLION LKR</span>
                     <span class="block text-sm text-gray-400 mt-2 text-center">IN DAMAGES</span>
                 </div>
@@ -141,96 +145,206 @@
         </div>
     </section>
 
-    <!-- Challenge Section -->
+    <!-- Background Section -->
+    <section id="background" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- Badge -->
+            <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase tracking-wider mb-3">
+                Background
+            </span>
+            
+            <!-- Title -->
+            <h2 class="text-3xl md:text-4xl font-bold text-black uppercase mb-12">
+                The Disaster & Its Impact
+            </h2>
+            
+            <!-- Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <div class="space-y-6">
+                    <p class="text-gray-700 leading-relaxed">
+                        Cyclone Ditwah unleashed unprecedented devastation across the nation, with the University of Peradeniya bearing the brunt of the impact. On November 27–28, the Mahaweli River breached its banks, submerging vast sections of the campus. The floodwaters, which <strong class="text-black">rose to nearly 16 feet in some areas</strong>, severely compromised the Faculties of Management, Veterinary Medicine & Animal Science, and Agriculture.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        The destruction extended to critical infrastructure, including the Sarasavi Medura hostel, administrative units, sports facilities, and road networks. Laboratories, server rooms, and document archives were decimated, while over 160 students lost their books, devices, and personal belongings in a single hostel. With power grids and sewage systems crippled and landslide risks rising, the university requires immediate, long-term rehabilitation.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <p class="text-gray-700 leading-relaxed">
+                        Preliminary assessments estimate direct losses at approximately <strong class="text-black">Rs. 3 billion</strong>. However, the comprehensive cost for full recovery, accounting for necessary relocation, new construction, slope stabilization, and riverbank fortification is projected to exceed <strong class="text-black">Rs. 7-8 billion</strong>.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        The University of Peradeniya serves the nation as a hub for <strong class="text-black">16,000 undergraduates</strong> and thousands of postgraduate students. Simply restoring the damaged structures in their original flood-prone locations would leave the institution vulnerable to future climate disasters.
+                    </p>
+                    <p class="text-xl font-bold text-black italic border-l-4 border-black pl-6">
+                        We cannot merely restore what was lost; we must rebuild stronger, safer, and more resilient.
+                    </p>
+                </div>
+                                
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+
+    <section id="gallery" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div class="flex flex-col items-start">
+                <span class="px-3 py-1 bg-black text-white text-xs font-bold uppercase tracking-wider mb-3">The Impact</span>
+                <h2 class="text-3xl md:text-4xl uppercase font-extrabold text-black">Before & After the Floods</h2>
+            </div>
+        </div>
+        
+        <div class="relative group">
+            
+            <button id="gallery-prev" class="absolute left-2 top-1/3 -translate-y-1/2 -ml-4 z-30 w-12 h-12 bg-white text-black shadow-lg rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 hidden md:flex" aria-label="Scroll Left">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+
+            <div id="gallery-container" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar scroll-smooth">
+                </div>
+
+            <button id="gallery-next" class="absolute right-2 top-1/3 -translate-y-1/2 -mr-4 z-30 w-12 h-12 bg-white text-black shadow-lg rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 hidden md:flex" aria-label="Scroll Right">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+
+        </div>
+        
+        <div class="flex justify-end md:hidden mt-2">
+            <span class="text-xs text-gray-500">Swipe to see more &rarr;</span>
+        </div>
+        </div>
+    </section>
 
     <!-- Solution Section -->
-    <section id="solution" class="bg-white py-24">
+    <section id="solution" class="bg-gray-100 py-16">
         <div class="max-w-7xl mx-auto px-6">
 
             <!-- Badge -->
             <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold uppercase tracking-wider mb-3">
-                Our Solution
+                Proposed Solution
             </span>
 
             <!-- Title -->
-            <h2 class="text-3xl md:text-4xl font-extrabold text-black uppercase mb-16">
-                The Restoration Plan
+            <h2 class="lg:text-5xl md:text-4xl font-bold text-black uppercase mb-16">
+                Proposed Restoration & Rehabilitation Plan
             </h2>
 
-            <!-- Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Two Column Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-[3fr_7fr] gap-12">
 
-                <!-- Card 01 -->
-                <div class="border border-gray-300 p-8 hover:border-black transition-all duration-300 hover:-translate-y-1">
-                    <span class="block text-5xl font-extrabold text-gray-600 mb-4">01</span>
-                    <h3 class="text-lg font-bold uppercase mb-2">Gabion Walls</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Construction of gabion retaining walls to control erosion
-                        and protect vulnerable slopes and infrastructure.
-                    </p>
+                <!-- Left: Accordion List -->
+                <div class="flex flex-col">
+                    
+                    <!-- Item 01 -->
+                    <div class="group border-b border-gray-300 bg-white hover:bg-slate-50 transition-all duration-300 cursor-pointer">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold uppercase text-black transition-colors duration-300 flex items-center gap-3">
+                                <span class="text-black">01.</span>
+                                Establishment of Gabion Walls
+                            </h3>
+                            <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 ease-in-out">
+                                <p class="text-sm text-black leading-relaxed mt-3">
+                                    Construction of gabion retaining structures in identified high-risk areas to control erosion,
+                                    stabilize riverbanks, and prevent further slope failures.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 02 -->
+                    <div class="group border-b border-gray-300 bg-white hover:bg-slate-50 transition-all duration-300 cursor-pointer">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold uppercase text-black transition-colors duration-300 flex items-center gap-3">
+                                <span class="text-black">02.</span>
+                                Slope Stabilization Measures
+                            </h3>
+                            <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 ease-in-out">
+                                <p class="text-sm text-black leading-relaxed mt-3">
+                                    Implementation of slope stabilization techniques based on geotechnical assessments,
+                                    including drainage improvements, reinforcement, and bioengineering solutions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 03 -->
+                    <div class="group border-b border-gray-300 bg-white hover:bg-slate-50 transition-all duration-300 cursor-pointer">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold uppercase text-black transition-colors duration-300 flex items-center gap-3">
+                                <span class="text-black">03.</span>
+                                Replacement of Damaged Equipment
+                            </h3>
+                            <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 ease-in-out">
+                                <p class="text-sm text-black leading-relaxed mt-3">
+                                    Procurement and installation of essential laboratory, teaching, and service equipment
+                                    damaged beyond repair by flooding.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 04 -->
+                    <div class="group border-b border-gray-300 bg-white hover:bg-slate-50 transition-all duration-300 cursor-pointer">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold uppercase text-black transition-colors duration-300 flex items-center gap-3">
+                                <span class="text-black">04.</span>
+                                Relocation of Vulnerable Facilities
+                            </h3>
+                            <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 ease-in-out">
+                                <p class="text-sm text-black leading-relaxed mt-3">
+                                    Relocation of critical facilities such as the University Daycare Centre and the University
+                                    Works Department from flood- and landslide-prone zones to safer locations within
+                                    the campus.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 05 -->
+                    <div class="group border-b border-gray-300 bg-white hover:bg-slate-50 transition-all duration-300 cursor-pointer">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold uppercase text-black transition-colors duration-300 flex items-center gap-3">
+                                <span class="text-black">05.</span>
+                                Replacement of Transformers and Electrical Infrastructure
+                            </h3>
+                            <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 ease-in-out">
+                                <p class="text-sm text-black leading-relaxed mt-3">
+                                    Restoration and upgrading of damaged transformers and associated electrical systems to
+                                    ensure uninterrupted and safe power supply.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 06 -->
+                    <div class="group border-b border-gray-300 bg-white hover:bg-slate-50 transition-all duration-300 cursor-pointer">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold uppercase text-black transition-colors duration-300 flex items-center gap-3">
+                                <span class="text-black">06.</span>
+                                Establishment of a New Emergency Siren System
+                            </h3>
+                            <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 ease-in-out">
+                                <p class="text-sm text-black leading-relaxed mt-3">
+                                    Installation of a campus-wide siren and alert system for the Security Office, designed to
+                                    function during power failures, to enhance emergency communication and
+                                    evacuation readiness.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Card 02 -->
-                <div class="border border-gray-300 p-8 hover:border-black transition-all duration-300 hover:-translate-y-1">
-                    <span class="block text-5xl font-extrabold text-gray-600 mb-4">02</span>
-                    <h3 class="text-lg font-bold uppercase mb-2">Slope Stabilization</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Advanced geotechnical solutions to stabilize soil,
-                        prevent landslides, and ensure long-term safety.
-                    </p>
+                <!-- Right: Video Placeholder -->
+                <div class="bg-[#c08080] flex items-center justify-center min-h-[400px] lg:min-h-full">
+                    <span class="text-white text-4xl md:text-6xl font-light tracking-widest">VIDEO</span>
                 </div>
 
-                <!-- Card 03 -->
-                <div class="border border-gray-300 p-8 hover:border-black transition-all duration-300 hover:-translate-y-1">
-                    <span class="block text-5xl font-extrabold text-gray-600 mb-4">03</span>
-                    <h3 class="text-lg font-bold uppercase mb-2">Equipment Replacement</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Replacement of damaged laboratory and teaching equipment
-                        to restore academic and research activities.
-                    </p>
-                </div>
-
-                <!-- Card 04 -->
-                <div class="border border-gray-300 p-8 hover:border-black transition-all duration-300 hover:-translate-y-1">
-                    <span class="block text-5xl font-extrabold text-gray-600 mb-4">04</span>
-                    <h3 class="text-lg font-bold uppercase mb-2">Facility Relocation</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Relocation of critical units such as the daycare center
-                        and works department to safer locations.
-                    </p>
-                </div>
-
-                <!-- Card 05 -->
-                <div class="border border-gray-300 p-8 hover:border-black transition-all duration-300 hover:-translate-y-1">
-                    <span class="block text-5xl font-extrabold text-gray-600 mb-4">05</span>
-                    <h3 class="text-lg font-bold uppercase mb-2">Electrical Infrastructure</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Restoration and upgrading of transformers and electrical
-                        systems to ensure reliable power supply.
-                    </p>
-                </div>
-
-                <!-- Card 06 -->
-                <div class="border border-gray-300 p-8 hover:border-black transition-all duration-300 hover:-translate-y-1">
-                    <span class="block text-5xl font-extrabold text-gray-600 mb-4">06</span>
-                    <h3 class="text-lg font-bold uppercase mb-2">Emergency Siren System</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Installation of emergency sirens to provide alerts during
-                        power failures and disaster situations.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- CTA Button -->
-            <div class="mt-16">
-                <a href="plan/overview.html"
-                class="inline-flex items-center gap-3 px-8 py-4 border-2 border-white text-white font-semibold hover:bg-white hover:text-black transition-all">
-                    View Complete Restoration Plan
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
             </div>
 
         </div>
@@ -460,38 +574,6 @@
         </div>
     </section>
 
-    <!-- Gallary Section -->
-
-    <section id="gallery" class="py-20 bg-gray-100">
-    <div class="max-w-7xl mx-auto px-6">
-        
-        <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div class="flex flex-col items-start">
-                <span class="px-3 py-1 bg-black text-white text-xs font-bold uppercase tracking-wider mb-3">The Impact</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-black">Before & After the Floods</h2>
-            </div>
-        </div>
-        
-        <div class="relative group">
-            
-            <button id="gallery-prev" class="absolute left-2 top-1/3 -translate-y-1/2 -ml-4 z-30 w-12 h-12 bg-white text-black shadow-lg rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 hidden md:flex" aria-label="Scroll Left">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-            </button>
-
-            <div id="gallery-container" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar scroll-smooth">
-                </div>
-
-            <button id="gallery-next" class="absolute right-2 top-1/3 -translate-y-1/2 -mr-4 z-30 w-12 h-12 bg-white text-black shadow-lg rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 hidden md:flex" aria-label="Scroll Right">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-            </button>
-
-        </div>
-        
-        <div class="flex justify-end md:hidden mt-2">
-            <span class="text-xs text-gray-500">Swipe to see more &rarr;</span>
-        </div>
-    </div>
-</section>
 
 <!-- CTA Section -->
 <section id="cta" class="bg-black text-white py-28">
