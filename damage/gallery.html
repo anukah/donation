@@ -5,9 +5,232 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo & Video Gallery | Rebuild Peradeniya</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        .nav-dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu { display: none; }
+    </style>
 </head>
-<body class="font-sans">
-    <!-- Page: Photo & Video Gallery -->
-    <!-- TODO: Add content -->
+<body class="font-sans bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <nav class="fixed top-0 left-0 right-0 w-full z-50 bg-white border-b border-gray-200" id="navbar">
+        <div class="w-full mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-1.5 md:gap-3 flex-shrink min-w-0">
+                <div class="w-9 h-9 md:w-12 md:h-12 lg:w-10 lg:h-10 flex-shrink-0">
+                    <img src="../assets/Uni-logo-500.png" alt="University of Peradeniya Logo" class="w-full h-full object-contain">
+                </div>
+                <div class="flex flex-col justify-center min-w-0">
+                    <span class="text-xl md:text-3xl lg:text-4xl font-extrabold text-black leading-none truncate">REBUILD PERA</span>
+                    <span class="text-[0.5rem] md:text-xs text-gray-500 truncate">A DISASTER RECOVERY & RESILIENCE INITIATIVE</span>
+                </div>
+            </a>
+
+            <button class="xl:hidden flex flex-col gap-1.5 p-2" id="navToggle" aria-label="Toggle navigation" onclick="document.getElementById('navMenu').classList.toggle('hidden')">
+                <span class="w-6 h-0.5 bg-black transition-all"></span>
+                <span class="w-6 h-0.5 bg-black transition-all"></span>
+                <span class="w-6 h-0.5 bg-black transition-all"></span>
+            </button>
+
+            <ul class="hidden xl:flex items-center gap-1">
+                <li><a href="../index.html" class="px-4 py-2 text-sm font-medium text-black hover:underline">HOME</a></li>
+                <li class="nav-dropdown relative">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-black hover:underline">THE DAMAGE <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down ml-1 w-4 h-4"><path d="m6 9 6 6 6-6"/></svg></a>
+                    <ul class="dropdown-menu absolute top-full left-0 min-w-[260px] p-2 bg-white border border-gray-200 shadow-lg z-50">
+                        <li><a href="background.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">BACKGROUND & SITUATION</a></li>
+                        <li><a href="management.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">FACULTY OF MANAGEMENT</a></li>
+                        <li><a href="veterinary.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">FACULTY OF VETERINARY MEDICINE</a></li>
+                        <li><a href="agriculture.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">FACULTY OF AGRICULTURE</a></li>
+                        <li><a href="infrastructure.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">UNIVERSITY INFRASTRUCTURE</a></li>
+                        <li><a href="gallery.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">PHOTO & VIDEO GALLERY</a></li>
+                    </ul>
+                </li>
+                <li><a href="../projects.html" class="px-4 py-2 text-sm font-medium text-black hover:underline">PROJECTS</a></li>
+                <li><a href="../acknowledgements.html" class="px-4 py-2 text-sm font-medium text-black hover:underline">ACKNOWLEDGEMENTS</a></li>
+                <li><a href="../donate.html" class="px-6 py-2 text-sm font-semibold bg-black text-white hover:bg-gray-800 transition-colors">DONATE NOW</a></li>
+            </ul>
+        </div>
+
+        <div class="hidden xl:hidden flex-col w-full bg-white border-t border-gray-200" id="navMenu">
+            <ul class="flex flex-col px-6 py-4">
+                <li><a href="../index.html" class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100">HOME</a></li>
+                <li class="border-b border-gray-100">
+                    <button class="flex items-center w-full py-2 text-sm font-medium text-black hover:underline justify-between" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        THE DAMAGE 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <ul class="hidden pl-4 pb-2 bg-gray-50">
+                        <li><a href="background.html" class="block py-2 text-sm text-gray-600 hover:text-black">BACKGROUND & SITUATION</a></li>
+                        <li><a href="management.html" class="block py-2 text-sm text-gray-600 hover:text-black">FACULTY OF MANAGEMENT</a></li>
+                        <li><a href="veterinary.html" class="block py-2 text-sm text-gray-600 hover:text-black">FACULTY OF VETERINARY MEDICINE</a></li>
+                        <li><a href="agriculture.html" class="block py-2 text-sm text-gray-600 hover:text-black">FACULTY OF AGRICULTURE</a></li>
+                        <li><a href="infrastructure.html" class="block py-2 text-sm text-gray-600 hover:text-black">UNIVERSITY INFRASTRUCTURE</a></li>
+                        <li><a href="gallery.html" class="block py-2 text-sm text-gray-600 hover:text-black">PHOTO & VIDEO GALLERY</a></li>
+                    </ul>
+                </li>
+                <li><a href="../projects.html" class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100">PROJECTS</a></li>
+                <li><a href="../acknowledgements.html" class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100">ACKNOWLEDGEMENTS</a></li>
+                <li class="pt-4"><a href="../donate.html" class="block w-full py-3 text-sm font-semibold bg-black text-white text-center hover:bg-gray-800">DONATE NOW</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex flex-col justify-center items-center py-32 text-white" id="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../assets/home/hero.jpg') center/cover no-repeat; background-attachment: fixed;">
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6">
+            <h1 class="lg:text-7xl md:text-7xl text-5xl font-bold text-white leading-tight mb-4 mt-12 break-words uppercase">
+                Photo Gallery
+            </h1>
+            <p class="text-xs lg:text-lg text-gray-400 max-w-2xl mb-12 leading-relaxed text-left uppercase">
+                Visual documentation of the impact and our ongoing journey towards recovery.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full space-y-8">
+        
+        <section class="border-b border-gray-200 pb-8">
+            <button onclick="toggleSection('gallery-animal')" class="w-full flex items-center justify-between py-4 group focus:outline-none">
+                <div class="flex items-center gap-4">
+                    <h2 class="text-2xl font-bold text-gray-900 uppercase">Animal Science</h2>
+                </div>
+                <i id="icon-gallery-animal" class="fas fa-chevron-down text-gray-500 transform transition-transform duration-300"></i>
+            </button>
+            <div id="gallery-animal" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4"></div>
+        </section>
+
+        <section class="border-b border-gray-200 pb-8">
+            <button onclick="toggleSection('gallery-gym')" class="w-full flex items-center justify-between py-4 group focus:outline-none">
+                <div class="flex items-center gap-4">
+                    <h2 class="text-2xl font-bold text-gray-900 uppercase">Gymnasium</h2>
+                </div>
+                <i id="icon-gallery-gym" class="fas fa-chevron-down text-gray-500 transform transition-transform duration-300"></i>
+            </button>
+            <div id="gallery-gym" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4"></div>
+        </section>
+
+        <section class="border-b border-gray-200 pb-8">
+            <button onclick="toggleSection('gallery-it')" class="w-full flex items-center justify-between py-4 group focus:outline-none">
+                <div class="flex items-center gap-4">
+                    <h2 class="text-2xl font-bold text-gray-900 uppercase">IT Center</h2>
+                </div>
+                <i id="icon-gallery-it" class="fas fa-chevron-down text-gray-500 transform transition-transform duration-300"></i>
+            </button>
+            <div id="gallery-it" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4"></div>
+        </section>
+
+        <section class="border-b border-gray-200 pb-8">
+            <button onclick="toggleSection('gallery-management')" class="w-full flex items-center justify-between py-4 group focus:outline-none">
+                <div class="flex items-center gap-4">
+                    <h2 class="text-2xl font-bold text-gray-900 uppercase">Faculty of Management</h2>
+                </div>
+                <i id="icon-gallery-management" class="fas fa-chevron-down text-gray-500 transform transition-transform duration-300"></i>
+            </button>
+            <div id="gallery-management" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4"></div>
+        </section>
+
+        <section class="border-b border-gray-200 pb-8">
+            <button onclick="toggleSection('gallery-pool')" class="w-full flex items-center justify-between py-4 group focus:outline-none">
+                <div class="flex items-center gap-4">
+                    <h2 class="text-2xl font-bold text-gray-900 uppercase">Swimming Pool</h2>
+                </div>
+                <i id="icon-gallery-pool" class="fas fa-chevron-down text-gray-500 transform transition-transform duration-300"></i>
+            </button>
+            <div id="gallery-pool" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4"></div>
+        </section>
+
+        <section class="border-b border-gray-200 pb-8">
+            <button onclick="toggleSection('gallery-veterinary')" class="w-full flex items-center justify-between py-4 group focus:outline-none">
+                <div class="flex items-center gap-4">
+                    <h2 class="text-2xl font-bold text-gray-900 uppercase">Faculty of Veterinary Medicine</h2>
+                </div>
+                <i id="icon-gallery-veterinary" class="fas fa-chevron-down text-gray-500 transform transition-transform duration-300"></i>
+            </button>
+            <div id="gallery-veterinary" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4"></div>
+        </section>
+
+        <section class="border-b border-gray-200 pb-8">
+            <button onclick="toggleSection('gallery-works')" class="w-full flex items-center justify-between py-4 group focus:outline-none">
+                <div class="flex items-center gap-4">
+                    <h2 class="text-2xl font-bold text-gray-900 uppercase">Works Department</h2>
+                </div>
+                <i id="icon-gallery-works" class="fas fa-chevron-down text-gray-500 transform transition-transform duration-300"></i>
+            </button>
+            <div id="gallery-works" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4"></div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black text-gray-400 pt-20 pb-8 border-t border-gray-800 w-full mt-auto">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="lg:w-10 lg:h-10 md:w-16 md:h-16 w-9 h-9">
+                            <img src="../assets/Uni-logo-500.png" alt="University of Peradeniya Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <span class="text-2xl font-extrabold text-white leading-none">REBUILD PERA</span>
+                            <span class="text-[0.55rem] text-gray-500">A DISASTER RECOVERY & RESILIENCE INITIATIVE</span>
+                        </div>
+                    </div>
+                    <p class="text-xs leading-relaxed">
+                        A RESTORATION AND RESILIENCE-BUILDING INITIATIVE BY THE UNIVERSITY OF PERADENIYA FOLLOWING THE DITWAH CYCLONE FLOODS.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase treading-tight tracking-tight mb-6">QUICK LINKS</h4>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-sm hover:text-white transition-colors">HOME</a></li>
+                        <li><a href="background.html" class="text-sm hover:text-white transition-colors">THE DAMAGE</a></li>
+                        <li><a href="../projects.html" class="text-sm hover:text-white transition-colors">PROJECTS</a></li>
+                        <li><a href="../acknowledgements.html" class="text-sm hover:text-white transition-colors">WHY SUPPORT US</a></li>
+                        <li><a href="../about.html" class="text-sm hover:text-white transition-colors">ABOUT</a></li>
+                        <li><a href="../donate.html" class="text-sm hover:text-white transition-colors">DONATE</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">PROJECTS</h4>
+                    <ul class="space-y-3">
+                        <li><a href="../projects.html#ict" class="text-sm hover:text-white transition-colors">ICT RECOVERY</a></li>
+                        <li><a href="../projects.html#laboratory" class="text-sm hover:text-white transition-colors">LABORATORY EQUIPMENT</a></li>
+                        <li><a href="../projects.html#welfare" class="text-sm hover:text-white transition-colors">STUDENT WELFARE</a></li>
+                        <li><a href="../projects.html#capital" class="text-sm hover:text-white transition-colors">CAPITAL WORKS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">CONTACT</h4>
+                    <p class="text-sm mb-4">UNIVERSITY OF PERADENIYA,<br>PERADENIYA, SRI LANKA</p>
+                    <a href="mailto:rebuild@pdn.ac.lk" class="text-white font-medium hover:underline">bursar@pdn.ac.lk</a>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="w-10 h-10 border border-gray-600 flex items-center justify-center hover:bg-white hover:border-white hover:text-black transition-all" aria-label="Facebook">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 border border-gray-600 flex items-center justify-center hover:bg-white hover:border-white hover:text-black transition-all" aria-label="Twitter">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 border border-gray-600 flex items-center justify-center hover:bg-white hover:border-white hover:text-black transition-all" aria-label="LinkedIn">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 z-[60] hidden bg-black bg-opacity-95 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300 opacity-0">
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition focus:outline-none z-50">&times;</button>
+        <button onclick="changeSlide(-1)" class="absolute left-4 text-white text-3xl hover:text-gray-300 p-2 focus:outline-none z-50 bg-black bg-opacity-20 rounded-full h-12 w-12 flex items-center justify-center hover:bg-opacity-50 transition"><i class="fas fa-chevron-left"></i></button>
+        <div class="relative max-w-5xl max-h-[90vh] w-full p-4 flex flex-col items-center justify-center">
+            <div id="lightbox-content" class="w-full h-auto max-h-[80vh] flex items-center justify-center">
+            </div>
+            <p id="lightbox-caption" class="text-gray-300 mt-4 text-lg font-medium text-center"></p>
+        </div>
+        <button onclick="changeSlide(1)" class="absolute right-4 text-white text-3xl hover:text-gray-300 p-2 focus:outline-none z-50 bg-black bg-opacity-20 rounded-full h-12 w-12 flex items-center justify-center hover:bg-opacity-50 transition"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script src="../js/damages.js"></script>
 </body>
 </html>
