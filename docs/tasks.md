@@ -369,7 +369,7 @@ Create a single page with sections for each project category. Use anchor IDs for
 assets/
 ├── Uni-logo-500.png (logo - already in use)
 ├── home/
-│   └── carousel-1.jpg (hero background - already in use)
+│   └── hero.jpg (hero background - already in use)
 ├── damage/ (create if needed)
 │   ├── gymnasium-before.jpg
 │   ├── gymnasium-after.jpg
