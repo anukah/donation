@@ -21,7 +21,7 @@
     </style>
   </head>
 
-  <body class="font-sans text-gray-800 pt-20">
+  <body class="font-sans text-gray-800">
     <!-- Navigation navbar -->
     <nav
       class="fixed top-0 left-0 right-0 w-full z-50 bg-white border-b border-gray-200"
@@ -86,8 +86,7 @@
                 stroke-linejoin="round"
                 class="lucide lucide-chevron-down-icon lucide-chevron-down"
               >
-                <path d="m6 9 6 6 6-6" /></svg
-            ></a>
+                <path d="m6 9 6 6 6-6" /></svg></a>
             <ul
               class="dropdown-menu absolute top-full left-0 min-w-[260px] p-2 bg-white border border-gray-200"
             >
@@ -189,8 +188,7 @@
                 stroke-linejoin="round"
                 class="lucide lucide-chevron-down-icon lucide-chevron-down"
               >
-                <path d="m6 9 6 6 6-6" /></svg
-            ></a>
+                <path d="m6 9 6 6 6-6" /></svg></a>
             <ul class="hidden pl-4 pb-2">
               <li>
                 <a
@@ -263,21 +261,26 @@
 
     <!-- HERO SECTION -->
     <section
-      class="relative min-h-screen flex items-center text-white"
+      class="relative min-h-screen flex flex-col justify-center items-center py-32 text-white"
+      id="hero"
       style="
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
           url('../assets/veterinary/hero-damage.jpg') center/cover no-repeat;
         background-attachment: fixed;
       "
     >
-      <div class="max-w-7xl mx-auto px-6 py-32">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6">
-          Faculty of Veterinary Medicine
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-6">
+        <h1
+          class="lg-text-4xl md:text-7xl text-5xl font-bold text-white leading-tight mb-4 mt-12 break-words"
+        >
+          FACULTY OF VETERINARY MEDICINE
         </h1>
-        <p class="text-xl md:text-2xl max-w-3xl text-gray-200">
-          Home to Sri Lanka’s
-          <span class="font-semibold text-white"
-            >ONLY Veterinary Teaching Hospital</span
+        <p
+          class="text-xs lg:text-lg text-gray-400 max-w-2xl mb-12 leading-relaxed text-left"
+        >
+          HOME TO SRI LANKA'S
+          <span class="font-semibold text-gray-400"
+            >ONLY VETERINARY TEACHING HOSPITAL</span
           >
         </p>
       </div>
@@ -285,7 +288,7 @@
 
     <!-- EMPHASIS SECTION -->
     <section class="py-20 bg-gray-50">
-      <div class="max-w-5xl mx-auto px-6 text-center">
+      <div class="max-w-5xl mx-auto px-6 text-left">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">
           A Nationally Critical Institution
         </h2>
