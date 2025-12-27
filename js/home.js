@@ -80,7 +80,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 document.addEventListener('DOMContentLoaded', () => {
     initDynamicGallery();
-    initGalleryScroll(); 
+    initGalleryScroll();
 });
 
 function initDynamicGallery() {
@@ -92,36 +92,36 @@ function initDynamicGallery() {
             title: "University Gymnasium",
             description: "Once a hub for student athletics, the indoor stadium remains submerged in mud and debris.",
             damageBadge: "CRITICAL DAMAGE",
-            beforeImg: "assets/home/1.jpg", 
-            afterImg:  "assets/home/carousel-1.jpg"
+            beforeImg: "assets/home/1.jpg",
+            afterImg: "assets/home/hero.jpg"
         },
         {
             title: "Sarachchandra Open Air Theatre",
             description: "The iconic 'Wala' was completely inundated. The stage structure has suffered severe weakening.",
             damageBadge: "FLOODED",
             beforeImg: "assets/home/1.jpg",
-            afterImg:  "assets/home/carousel-1.jpg"
+            afterImg: "assets/home/hero.jpg"
         },
         {
             title: "Information Technology Centre",
             description: "Server rooms and computer laboratories were destroyed, disrupting digital services.",
             damageBadge: "EQUIPMENT LOST",
             beforeImg: "assets/home/1.jpg",
-            afterImg:  "assets/home/carousel-1.jpg"
+            afterImg: "assets/home/hero.jpg"
         },
         {
             title: "Veterinary Teaching Hospital",
             description: "Sri Lanka's only veterinary teaching hospital lost critical diagnostic equipment and operating theaters.",
             damageBadge: "SEVERE DAMAGE",
             beforeImg: "assets/home/1.jpg",
-            afterImg:  "assets/home/carousel-1.jpg"
+            afterImg: "assets/home/hero.jpg"
         },
         {
             title: "Faculty of Management",
             description: "Lecture halls and the administrative complex were flooded, destroying records and furniture.",
             damageBadge: "RECORDS DESTROYED",
             beforeImg: "assets/home/1.jpg",
-            afterImg:  "assets/home/carousel-1.jpg"
+            afterImg: "assets/home/hero.jpg"
         }
     ];
 
@@ -159,7 +159,7 @@ function initDynamicGallery() {
         const data = galleryData[index];
         const beforeLayer = card.querySelector('.before-layer');
         const badge = card.querySelector('.status-badge');
-        
+
         // CSS Classes for Badge States
         const styleDamage = "status-badge absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded shadow-sm z-20 transition-all duration-300";
         const styleSafe = "status-badge absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded shadow-sm z-20 transition-all duration-300";
@@ -190,7 +190,7 @@ function initGalleryScroll() {
 
     if (!container || !prevBtn || !nextBtn) return;
 
-    const scrollAmount = 424; 
+    const scrollAmount = 424;
 
     prevBtn.addEventListener('click', () => {
         container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
