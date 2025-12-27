@@ -18,6 +18,108 @@
         opacity: 1;
         visibility: visible;
       }
+
+      /* Carousel styles */
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .carousel {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      .carousel .item {
+        width: 100%;
+        display: none;
+        animation: fade 0.4s ease-in-out;
+      }
+
+      .carousel .item.active {
+        display: block;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .carousel .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+      .carousel .item.active {
+        opacity: 1;
+        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 500px;
+      }
+      .carousel .item section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+      }
+      .carousel-container .btn {
+        padding: 0.75em 1.5em;
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        z-index: 10;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 700;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6);
+        transition: all 0.2s ease-in-out;
+      }
+      .carousel-container .btn:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+      .carousel-container .prev {
+        left: 10px;
+      }
+      .carousel-container .next {
+        right: 10px;
+      }
+      .carousel-container .dots {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        z-index: 10;
+      }
+      .carousel-container .dot {
+        cursor: pointer;
+        height: 10px;
+        width: 10px;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        transition: background-color 0.2s ease;
+      }
+      .carousel-container .dot.active,
+      .carousel-container .dot:hover {
+        background-color: white;
+      }
     </style>
   </head>
 
@@ -286,13 +388,14 @@
       </div>
     </section>
 
-    <!-- EMPHASIS SECTION -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-5xl mx-auto px-6 text-left">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+    <!-- Emphasis -->
+
+    <section class="py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-3xl font-bold mb-6">
           A Nationally Critical Institution
-        </h2>
-        <p class="text-lg text-gray-700 leading-relaxed">
+        </h3>
+        <p class="mt-6 text-gray-700">
           The Faculty of Veterinary Medicine houses
           <strong>Sri Lanka’s only Veterinary Teaching Hospital</strong>,
           playing a vital role in animal healthcare, education, research, and
@@ -302,69 +405,120 @@
       </div>
     </section>
 
-    <!-- TEACHING HOSPITAL DAMAGE -->
-    <section class="py-20">
-      <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-bold mb-6">Teaching Hospital Damage</h3>
-        <ul class="list-disc list-inside space-y-2 text-gray-700">
-          <li>Theatre tables</li>
-          <li>Anaesthetic machines</li>
-          <li>Surgical instruments</li>
-          <li>Patient monitors</li>
-          <li>Sterilisation units</li>
-          <li>Biosafety cabinets</li>
-        </ul>
-        <p class="mt-6 text-gray-700">
-          Neonatal care units and necropsy facilities were also severely
-          affected, limiting critical veterinary training and lifesaving
-          procedures.
-        </p>
-      </div>
-    </section>
+    <!-- Carousel -->
 
-    <!-- FARM ANIMAL HOSPITAL -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-bold mb-6">Farm Animal Hospital</h3>
-        <p class="text-gray-700 leading-relaxed">
-          The Farm Animal Hospital sustained extensive structural and equipment
-          damage, disrupting services essential for large animal treatment,
-          field training, and rural livestock support.
-        </p>
+    <div class="bg-gray-100 order-1 lg:order-2">
+      <div class="carousel-container min-h-[300px] lg:min-h-[500px]">
+        <div class="carousel">
+          <div class="item active">
+            <!-- TEACHING HOSPITAL DAMAGE -->
+            <section class="py-20">
+              <div class="max-w-6xl mx-auto px-6">
+                <h3 class="text-3xl font-bold mb-6">
+                  Teaching Hospital Damage
+                </h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                  <li>Theatre tables</li>
+                  <li>Anaesthetic machines</li>
+                  <li>Surgical instruments</li>
+                  <li>Patient monitors</li>
+                  <li>Sterilisation units</li>
+                  <li>Biosafety cabinets</li>
+                </ul>
+                <p class="mt-6 text-gray-700">
+                  Neonatal care units and necropsy facilities were also severely
+                  affected, limiting critical veterinary training and lifesaving
+                  procedures.
+                </p>
+              </div>
+            </section>
+          </div>
+          <div class="item">
+            <!-- FARM ANIMAL HOSPITAL -->
+            <section class="py-20">
+              <div class="max-w-6xl mx-auto px-6">
+                <h3 class="text-3xl font-bold mb-6">Farm Animal Hospital</h3>
+                <p class="text-gray-700 leading-relaxed">
+                  The Farm Animal Hospital sustained extensive structural and
+                  equipment damage, disrupting services essential for large
+                  animal treatment, field training, and rural livestock support.
+                </p>
+              </div>
+            </section>
+          </div>
+          <div class="item">
+            <!-- BIOCHEMISTRY LAB -->
+            <section class="py-20">
+              <div class="max-w-6xl mx-auto px-6">
+                <h3 class="text-3xl font-bold mb-6">Biochemistry Laboratory</h3>
+                <p class="text-gray-700 leading-relaxed">
+                  Key laboratory equipment was damaged, affecting teaching,
+                  research, and diagnostic services critical to veterinary
+                  education.
+                </p>
+              </div>
+            </section>
+          </div>
+          <div class="item">
+            <!-- CAADDR SECTION -->
+            <section class="py-20">
+              <div class="max-w-6xl mx-auto px-6">
+                <h3 class="text-3xl font-bold mb-6">
+                  CAADDR – Centre for Aquatic Animal Disease Diagnosis &
+                  Research
+                </h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                  <li>Biosafety cabinets</li>
+                  <li>PCR machines</li>
+                  <li>Incubators</li>
+                  <li>Microscopes</li>
+                  <li>Autoclaves</li>
+                </ul>
+                <p class="mt-6 text-gray-700 leading-relaxed">
+                  Damage to CAADDR has significantly affected Sri Lanka’s
+                  <strong
+                    >national aquatic animal disease diagnostic capacity</strong
+                  >, posing risks to food security and export industries.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+        <button class="btn prev">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-chevron-left-icon lucide-chevron-left"
+          >
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </button>
+        <button class="btn next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-chevron-right-icon lucide-chevron-right"
+          >
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </button>
+        <div class="dots"></div>
       </div>
-    </section>
-
-    <!-- BIOCHEMISTRY LAB -->
-    <section class="py-20">
-      <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-bold mb-6">Biochemistry Laboratory</h3>
-        <p class="text-gray-700 leading-relaxed">
-          Key laboratory equipment was damaged, affecting teaching, research,
-          and diagnostic services critical to veterinary education.
-        </p>
-      </div>
-    </section>
-
-    <!-- CAADDR SECTION -->
-    <section class="py-20 bg-gray-900 text-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-bold mb-6">
-          CAADDR – Centre for Aquatic Animal Disease Diagnosis & Research
-        </h3>
-        <ul class="list-disc list-inside space-y-2 text-gray-300">
-          <li>Biosafety cabinets</li>
-          <li>PCR machines</li>
-          <li>Incubators</li>
-          <li>Microscopes</li>
-          <li>Autoclaves</li>
-        </ul>
-        <p class="mt-6 text-gray-300 leading-relaxed">
-          Damage to CAADDR has significantly affected Sri Lanka’s
-          <strong>national aquatic animal disease diagnostic capacity</strong>,
-          posing risks to food security and export industries.
-        </p>
-      </div>
-    </section>
+    </div>
 
     <!-- RELATED PROJECTS -->
     <section class="py-20 bg-gray-50">
@@ -411,6 +565,96 @@
       </div>
     </section>
     <script>
+      // Carousel functionality: dots, prev/next, autoplay, pause on hover
+      (function () {
+        // 1. Target the container instead of just the inner carousel
+        const container = document.querySelector(".carousel-container");
+        if (!container) return;
+
+        const carousel = container.querySelector(".carousel");
+        const items = Array.from(carousel.querySelectorAll(".item"));
+
+        // 2. Look for buttons and dots in the container
+        const prevBtn = container.querySelector(".prev");
+        const nextBtn = container.querySelector(".next");
+        const dotsContainer = container.querySelector(".dots");
+
+        if (!items.length || !dotsContainer) return;
+
+        let current = items.findIndex((it) => it.classList.contains("active"));
+        if (current === -1) current = 0;
+
+        function showSlide(idx) {
+          idx = (idx + items.length) % items.length;
+          items.forEach((it, i) => it.classList.toggle("active", i === idx));
+          const dots = Array.from(dotsContainer.children);
+          dots.forEach((d, i) => d.classList.toggle("active", i === idx));
+          current = idx;
+        }
+
+        // Create dots
+        items.forEach((_, i) => {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "dot";
+          dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+          dot.addEventListener("click", () => {
+            pause();
+            showSlide(i);
+          });
+          dotsContainer.appendChild(dot);
+        });
+
+        showSlide(current);
+
+        function prev() {
+          showSlide(current - 1);
+        }
+        function next() {
+          showSlide(current + 1);
+        }
+
+        prevBtn?.addEventListener("click", (e) => {
+          e.preventDefault(); // Prevent jump if any
+          pause();
+          prev();
+        });
+
+        nextBtn?.addEventListener("click", (e) => {
+          e.preventDefault();
+          pause();
+          next();
+        });
+
+        let interval = 5000;
+        let timer = setInterval(next, interval);
+
+        function pause() {
+          if (timer) {
+            clearInterval(timer);
+            timer = null;
+          }
+        }
+
+        function resume() {
+          if (!timer) timer = setInterval(next, interval);
+        }
+
+        // Pause when hovering the whole container
+        container.addEventListener("mouseenter", pause);
+        container.addEventListener("mouseleave", resume);
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowLeft") {
+            pause();
+            prev();
+          } else if (e.key === "ArrowRight") {
+            pause();
+            next();
+          }
+        });
+      })();
+
       // Mobile nav toggle
       const navToggle = document.getElementById("navToggle");
       const navMenu = document.getElementById("navMenu");
