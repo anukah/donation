@@ -26,19 +26,18 @@
                 </div>
             </a>
 
-            <button class="xl:hidden flex flex-col gap-1.5 p-2 group" id="navToggle" aria-label="Toggle navigation">
+            <button class="xl:hidden flex flex-col gap-1.5 p-2" id="navToggle" aria-label="Toggle navigation">
                 <span class="w-6 h-0.5 bg-black transition-all"></span>
                 <span class="w-6 h-0.5 bg-black transition-all"></span>
                 <span class="w-6 h-0.5 bg-black transition-all"></span>
             </button>
 
+            <!-- Desktop Menu -->
             <ul class="hidden xl:flex items-center gap-1">
                 <li><a href="index.html" class="px-4 py-2 text-sm font-medium text-black hover:underline">HOME</a></li>
-                <li class="nav-dropdown relative group">
-                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-black hover:underline">
-                        THE DAMAGE <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="m6 9 6 6 6-6"/></svg>
-                    </a>
-                    <ul class="dropdown-menu absolute top-full left-0 min-w-[260px] p-2 bg-white border border-gray-200 shadow-lg hidden group-hover:block z-50">
+                <li class="nav-dropdown relative">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-black hover:underline">THE DAMAGE <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></a>
+                    <ul class="dropdown-menu absolute top-full left-0 min-w-[260px] p-2 bg-white border border-gray-200">
                         <li><a href="damage/background.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">BACKGROUND & SITUATION</a></li>
                         <li><a href="damage/management.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">FACULTY OF MANAGEMENT</a></li>
                         <li><a href="damage/veterinary.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">FACULTY OF VETERINARY MEDICINE</a></li>
@@ -49,18 +48,17 @@
                 </li>
                 <li><a href="projects.html" class="px-4 py-2 text-sm font-medium text-black hover:underline">PROJECTS</a></li>
                 <li><a href="acknowledgements.html" class="px-4 py-2 text-sm font-medium text-black hover:underline">ACKNOWLEDGEMENTS</a></li>
-                <li><a href="donate.html" class="px-6 py-2 text-sm font-semibold bg-black text-white hover:bg-gray-800 transition-colors">DONATE NOW</a></li>
+                <li><a href="donate.html" class="px-6 py-2 text-sm font-semibold bg-black text-white hover:bg-gray-800">DONATE NOW</a></li>
             </ul>
         </div>
 
-        <div class="hidden xl:hidden flex-col w-full bg-white border-t border-gray-200 shadow-lg" id="navMenu">
+        <!-- Mobile Menu (appears below navbar) -->
+        <div class="hidden xl:hidden flex-col w-full bg-white border-t border-gray-200" id="navMenu">
             <ul class="flex flex-col px-6 py-4">
                 <li><a href="index.html" class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100">HOME</a></li>
                 <li class="border-b border-gray-100">
-                    <button class="flex items-center w-full justify-between py-2 text-sm font-medium text-black hover:underline" onclick="document.getElementById('mobile-damage-submenu').classList.toggle('hidden')">
-                        THE DAMAGE <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                    <ul class="hidden pl-4 pb-2" id="mobile-damage-submenu">
+                    <a href="#" class="flex items-center py-2 text-sm font-medium text-black hover:underline">THE DAMAGE <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></a>
+                    <ul class="hidden pl-4 pb-2">
                         <li><a href="damage/background.html" class="block py-2 text-sm text-gray-600 hover:text-black">BACKGROUND & SITUATION</a></li>
                         <li><a href="damage/management.html" class="block py-2 text-sm text-gray-600 hover:text-black">FACULTY OF MANAGEMENT</a></li>
                         <li><a href="damage/veterinary.html" class="block py-2 text-sm text-gray-600 hover:text-black">FACULTY OF VETERINARY MEDICINE</a></li>

@@ -128,240 +128,64 @@
 
   <body class="font-sans text-gray-800">
     <!-- Navigation navbar -->
-    <nav
-      class="fixed top-0 left-0 right-0 w-full z-50 bg-white border-b border-gray-200"
-      id="navbar"
-    >
-      <div class="w-full mx-auto px-6 py-4 flex items-center justify-between">
-        <a
-          href="../index.html"
-          class="flex items-center gap-1.5 md:gap-3 flex-shrink min-w-0"
-        >
-          <div class="w-9 h-9 md:w-12 md:h-12 lg:w-10 lg:h-10 flex-shrink-0">
-            <img
-              src="../assets/Uni-logo-500.png"
-              alt="University of Peradeniya Logo"
-              class="w-full h-full object-contain"
-            />
-          </div>
-          <div class="flex flex-col justify-center min-w-0">
-            <span
-              class="text-xl md:text-3xl lg:text-4xl font-extrabold text-black leading-none truncate"
-              >REBUILD PERA</span
-            >
-            <span class="text-[0.5rem] md:text-xs text-gray-500 truncate"
-              >A DISASTER RECOVERY & RESILIENCE INITIATIVE</span
-            >
-          </div>
-        </a>
+    <nav class="fixed top-0 left-0 right-0 w-full z-50 bg-white border-b border-gray-200" id="navbar">
+        <div class="w-full mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-1.5 md:gap-3 flex-shrink min-w-0">
+                <div class="w-9 h-9 md:w-12 md:h-12 lg:w-10 lg:h-10 flex-shrink-0">
+                    <img src="assets/Uni-logo-500.png" alt="University of Peradeniya Logo" class="w-full h-full object-contain">
+                </div>
+                <div class="flex flex-col justify-center min-w-0">
+                    <span class="text-xl md:text-3xl lg:text-4xl font-extrabold text-black leading-none truncate">REBUILD PERA</span>
+                    <span class="text-[0.5rem] md:text-xs text-gray-500 truncate">A DISASTER RECOVERY & RESILIENCE INITIATIVE</span>
+                </div>
+            </a>
 
-        <button
-          class="xl:hidden flex flex-col gap-1.5 p-2"
-          id="navToggle"
-          aria-label="Toggle navigation"
-        >
-          <span class="w-6 h-0.5 bg-black transition-all"></span>
-          <span class="w-6 h-0.5 bg-black transition-all"></span>
-          <span class="w-6 h-0.5 bg-black transition-all"></span>
-        </button>
+            <button class="xl:hidden flex flex-col gap-1.5 p-2" id="navToggle" aria-label="Toggle navigation">
+                <span class="w-6 h-0.5 bg-black transition-all"></span>
+                <span class="w-6 h-0.5 bg-black transition-all"></span>
+                <span class="w-6 h-0.5 bg-black transition-all"></span>
+            </button>
 
-        <!-- Desktop Menu -->
-        <ul class="hidden xl:flex items-center gap-1">
-          <li>
-            <a
-              href="/index.html"
-              class="px-4 py-2 text-sm font-medium text-black hover:underline"
-              >HOME</a
-            >
-          </li>
-          <li class="nav-dropdown relative">
-            <a
-              href="#"
-              class="flex items-center px-4 py-2 text-sm font-medium text-black hover:underline"
-              >THE DAMAGE
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-chevron-down-icon lucide-chevron-down"
-              >
-                <path d="m6 9 6 6 6-6" /></svg></a>
-            <ul
-              class="dropdown-menu absolute top-full left-0 min-w-[260px] p-2 bg-white border border-gray-200"
-            >
-              <li>
-                <a
-                  href="/damage/background.html"
-                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
-                  >BACKGROUND & SITUATION</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/damage/management.html"
-                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
-                  >FACULTY OF MANAGEMENT</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/damage/veterinary.html"
-                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
-                  >FACULTY OF VETERINARY MEDICINE</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/damage/agriculture.html"
-                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
-                  >FACULTY OF AGRICULTURE</a
-                >
-              </li>
-              <li>
-                <a
-                  href="damage/infrastructure.html"
-                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
-                  >UNIVERSITY INFRASTRUCTURE</a
-                >
-              </li>
-              <li>
-                <a
-                  href="damage/gallery.html"
-                  class="block px-4 py-3 text-sm text-black hover:bg-gray-100"
-                  >PHOTO & VIDEO GALLERY</a
-                >
-              </li>
+            <!-- Desktop Menu -->
+            <ul class="hidden xl:flex items-center gap-1">
+                <li><a href="index.html" class="px-4 py-2 text-sm font-medium text-black hover:underline">HOME</a></li>
+                <li class="nav-dropdown relative">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-black hover:underline">THE DAMAGE <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></a>
+                    <ul class="dropdown-menu absolute top-full left-0 min-w-[260px] p-2 bg-white border border-gray-200">
+                        <li><a href="damage/background.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">BACKGROUND & SITUATION</a></li>
+                        <li><a href="damage/management.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">FACULTY OF MANAGEMENT</a></li>
+                        <li><a href="damage/veterinary.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">FACULTY OF VETERINARY MEDICINE</a></li>
+                        <li><a href="damage/agriculture.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">FACULTY OF AGRICULTURE</a></li>
+                        <li><a href="damage/infrastructure.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">UNIVERSITY INFRASTRUCTURE</a></li>
+                        <li><a href="damage/gallery.html" class="block px-4 py-3 text-sm text-black hover:bg-gray-100">PHOTO & VIDEO GALLERY</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="px-4 py-2 text-sm font-medium text-black hover:underline">PROJECTS</a></li>
+                <li><a href="acknowledgements.html" class="px-4 py-2 text-sm font-medium text-black hover:underline">ACKNOWLEDGEMENTS</a></li>
+                <li><a href="donate.html" class="px-6 py-2 text-sm font-semibold bg-black text-white hover:bg-gray-800">DONATE NOW</a></li>
             </ul>
-          </li>
-          <li>
-            <a
-              href="../projects.html"
-              class="px-4 py-2 text-sm font-medium text-black hover:underline"
-              >PROJECTS</a
-            >
-          </li>
-          <li>
-            <a
-              href="../acknowledgements.html"
-              class="px-4 py-2 text-sm font-medium text-black hover:underline"
-              >ACKNOWLEDGEMENTS</a
-            >
-          </li>
-          <li>
-            <a
-              href="../donate.html"
-              class="px-6 py-2 text-sm font-semibold bg-black text-white hover:bg-gray-800"
-              >DONATE NOW</a
-            >
-          </li>
-        </ul>
-      </div>
+        </div>
 
-      <!-- Mobile Menu (appears below navbar) -->
-      <div
-        class="hidden xl:hidden flex-col w-full bg-white border-t border-gray-200"
-        id="navMenu"
-      >
-        <ul class="flex flex-col px-6 py-4">
-          <li>
-            <a
-              href="index.html"
-              class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100"
-              >HOME</a
-            >
-          </li>
-          <li class="border-b border-gray-100">
-            <a
-              href="#"
-              class="flex items-center py-2 text-sm font-medium text-black hover:underline"
-              >THE DAMAGE
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-chevron-down-icon lucide-chevron-down"
-              >
-                <path d="m6 9 6 6 6-6" /></svg></a>
-            <ul class="hidden pl-4 pb-2">
-              <li>
-                <a
-                  href="damage/background.html"
-                  class="block py-2 text-sm text-gray-600 hover:text-black"
-                  >BACKGROUND & SITUATION</a
-                >
-              </li>
-              <li>
-                <a
-                  href="damage/management.html"
-                  class="block py-2 text-sm text-gray-600 hover:text-black"
-                  >FACULTY OF MANAGEMENT</a
-                >
-              </li>
-              <li>
-                <a
-                  href="damage/veterinary.html"
-                  class="block py-2 text-sm text-gray-600 hover:text-black"
-                  >FACULTY OF VETERINARY MEDICINE</a
-                >
-              </li>
-              <li>
-                <a
-                  href="damage/agriculture.html"
-                  class="block py-2 text-sm text-gray-600 hover:text-black"
-                  >FACULTY OF AGRICULTURE</a
-                >
-              </li>
-              <li>
-                <a
-                  href="damage/infrastructure.html"
-                  class="block py-2 text-sm text-gray-600 hover:text-black"
-                  >UNIVERSITY INFRASTRUCTURE</a
-                >
-              </li>
-              <li>
-                <a
-                  href="damage/gallery.html"
-                  class="block py-2 text-sm text-gray-600 hover:text-black"
-                  >PHOTO & VIDEO GALLERY</a
-                >
-              </li>
+        <!-- Mobile Menu (appears below navbar) -->
+        <div class="hidden xl:hidden flex-col w-full bg-white border-t border-gray-200" id="navMenu">
+            <ul class="flex flex-col px-6 py-4">
+                <li><a href="index.html" class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100">HOME</a></li>
+                <li class="border-b border-gray-100">
+                    <a href="#" class="flex items-center py-2 text-sm font-medium text-black hover:underline">THE DAMAGE <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></a>
+                    <ul class="hidden pl-4 pb-2">
+                        <li><a href="damage/background.html" class="block py-2 text-sm text-gray-600 hover:text-black">BACKGROUND & SITUATION</a></li>
+                        <li><a href="damage/management.html" class="block py-2 text-sm text-gray-600 hover:text-black">FACULTY OF MANAGEMENT</a></li>
+                        <li><a href="damage/veterinary.html" class="block py-2 text-sm text-gray-600 hover:text-black">FACULTY OF VETERINARY MEDICINE</a></li>
+                        <li><a href="damage/agriculture.html" class="block py-2 text-sm text-gray-600 hover:text-black">FACULTY OF AGRICULTURE</a></li>
+                        <li><a href="damage/infrastructure.html" class="block py-2 text-sm text-gray-600 hover:text-black">UNIVERSITY INFRASTRUCTURE</a></li>
+                        <li><a href="damage/gallery.html" class="block py-2 text-sm text-gray-600 hover:text-black">PHOTO & VIDEO GALLERY</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100">PROJECTS</a></li>
+                <li><a href="acknowledgements.html" class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100">ACKNOWLEDGEMENTS</a></li>
+                <li class="pt-4"><a href="donate.html" class="block w-full py-3 text-sm font-semibold bg-black text-white text-center hover:bg-gray-800">DONATE NOW</a></li>
             </ul>
-          </li>
-          <li>
-            <a
-              href="projects.html"
-              class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100"
-              >PROJECTS</a
-            >
-          </li>
-          <li>
-            <a
-              href="acknowledgements.html"
-              class="block py-3 text-sm font-medium text-black hover:underline border-b border-gray-100"
-              >ACKNOWLEDGEMENTS</a
-            >
-          </li>
-          <li class="pt-4">
-            <a
-              href="donate.html"
-              class="block w-full py-3 text-sm font-semibold bg-black text-white text-center hover:bg-gray-800"
-              >DONATE NOW</a
-            >
-          </li>
-        </ul>
-      </div>
+        </div>
     </nav>
 
     <!-- HERO SECTION -->
