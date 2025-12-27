@@ -64,16 +64,19 @@
     </div>
 </nav>
 
-<section class="relative min-h-screen flex items-center text-white"
-         style="background: linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)), url('../assets/acknowledgements/1.jpg') center/cover no-repeat;">
+<section class="relative min-h-screen flex flex-col justify-center items-center py-32 text-white" id="hero"
+         style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+url('../assets/home/carousel-1.jpg') center/cover no-repeat; background-attachment: fixed;">
+
     <div class="max-w-7xl mx-auto px-6 mt-24">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
+        <h1 class="lg-text-4xl md:text-7xl text-5xl font-bold text-white leading-tight mb-4 mt-12 break-words uppercase">
             Faculty of Management
         </h1>
-        <p class="max-w-2xl text-gray-300 text-lg">
-            Severe damage to one of the University of Peradeniya’s key academic faculties,
-            disrupting teaching, learning, and administrative operations.
+
+        <p class="text-xs lg:text-lg text-gray-400 max-w-2xl mb-12 leading-relaxed text-left uppercase">
+            Severe flood damage to one of the University of Peradeniya’s key academic faculties.
         </p>
+
     </div>
 </section>
 
@@ -183,9 +186,61 @@
     </div>
 </section>
 
-<footer class="bg-black text-gray-400 py-16">
-    <div class="max-w-7xl mx-auto px-6 text-center text-sm">
-        © University of Peradeniya — Rebuild Pera Initiative
+<footer class="bg-black text-gray-400 pt-20 pb-8 border-t border-gray-800 w-full">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="lg:w-10 lg:h-10 md:w-16 md:h-16 w-9 h-9">
+                        <img src="../assets/Uni-logo-500.png" alt="University of Peradeniya Logo" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span class="text-2xl font-extrabold text-white leading-none">REBUILD PERA</span>
+                        <span class="text-[0.55rem] text-gray-500">A DISASTER RECOVERY & RESILIENCE INITIATIVE</span>
+                    </div>
+                </div>
+                <p class="text-xs leading-relaxed">
+                    A RESTORATION AND RESILIENCE-BUILDING INITIATIVE BY THE UNIVERSITY OF PERADENIYA FOLLOWING THE DITWAH CYCLONE FLOODS.
+
+                </p>
+            </div>
+            <div>
+                <h4 class="text-sm font-semibold text-white uppercase treading-tight tracking-tight mb-6">QUICK LINKS</h4>
+                <ul class="space-y-3">
+                    <li><a href="../index.html" class="text-sm hover:text-white transition-colors">HOME</a></li>
+                    <li><a href="../damage/background.html" class="text-sm hover:text-white transition-colors">THE DAMAGE</a></li>
+                    <li><a href="../projects.html" class="text-sm hover:text-white transition-colors">PROJECTS</a></li>
+                    <li><a href="../acknowledgements.html" class="text-sm hover:text-white transition-colors">WHY SUPPORT US</a></li>
+                    <li><a href="../about.html" class="text-sm hover:text-white transition-colors">ABOUT</a></li>
+                    <li><a href="../donate.html" class="text-sm hover:text-white transition-colors">DONATE</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">PROJECTS</h4>
+                <ul class="space-y-3">
+                    <li><a href="../projects.html#ict" class="text-sm hover:text-white transition-colors">ICT RECOVERY</a></li>
+                    <li><a href="../projects.html#laboratory" class="text-sm hover:text-white transition-colors">LABORATORY EQUIPMENT</a></li>
+                    <li><a href="../projects.html#welfare" class="text-sm hover:text-white transition-colors">STUDENT WELFARE</a></li>
+                    <li><a href="../projects.html#capital" class="text-sm hover:text-white transition-colors">CAPITAL WORKS</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">CONTACT</h4>
+                <p class="text-sm mb-4">UNIVERSITY OF PERADENIYA,<br>PERADENIYA, SRI LANKA</p>
+                <a href="mailto:rebuild@pdn.ac.lk" class="text-white font-medium hover:underline">bursar@pdn.ac.lk</a>
+                <div class="flex gap-4 mt-6">
+                    <a href="#" class="w-10 h-10 border border-gray-600 flex items-center justify-center hover:bg-white hover:border-white hover:text-black transition-all" aria-label="Facebook">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 border border-gray-600 flex items-center justify-center hover:bg-white hover:border-white hover:text-black transition-all" aria-label="Twitter">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 border border-gray-600 flex items-center justify-center hover:bg-white hover:border-white hover:text-black transition-all" aria-label="LinkedIn">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </footer>
 
